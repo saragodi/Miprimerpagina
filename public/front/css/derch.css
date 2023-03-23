@@ -1795,3 +1795,21 @@ p {
   }
 }
 
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 100px;
+  height: 60px;
+  width: 60px;
+}
+
+.whatsapp-btn ion-icon {
+  font-size: 40px;
+}

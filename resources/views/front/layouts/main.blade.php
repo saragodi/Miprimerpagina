@@ -21,6 +21,8 @@
     @stack('seo')
 
     <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
     <link href="{{ asset('front/css/normalize.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('front/css/webflow.css') }}" rel="stylesheet" type="text/css">
@@ -101,6 +103,11 @@
     @include('front.layouts.partials._modal_messages')
     @yield('content')
 
+    <a href="https://wa.me/5214777955167?text=Hola!%20Necesito%20más%20información%20de%20sus%20servicios"
+        class="whatsapp-btn" target="black" data-bs-toggle="tooltip" data-bs-title="Chatea con nosotros!">
+        <ion-icon name="logo-whatsapp"></ion-icon>
+    </a>
+
 
     @include('front.layouts.footer')
 
@@ -110,6 +117,7 @@
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=638e6fa2a986f4769c6ff0ef"
         type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous">
     </script>
+
     <script src="{{ asset('front/js/webflow.js') }}" type="text/javascript"></script>
 
     <!-- JS -->
@@ -118,6 +126,11 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+    </script>
+
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
     </script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"

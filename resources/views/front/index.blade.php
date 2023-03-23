@@ -26,8 +26,7 @@
                             style="-webkit-transform:translate3d(100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
                             class="hero-gradient-col is--left is--img">
                             <div class="img-gradient"></div>
-                            <div class="hero-slideshow"><img src="images/pexels-katerina-holmes-5905520.jpg" loading="lazy"
-                                    srcset="images/pexels-katerina-holmes-5905520-p-500.jpeg 500w, images/pexels-katerina-holmes-5905520-p-1080.jpeg 1080w, images/pexels-katerina-holmes-5905520-p-1600.jpeg 1600w, images/pexels-katerina-holmes-5905520-p-2000.jpeg 2000w, images/pexels-katerina-holmes-5905520.jpg 2500w"
+                            <div class="hero-slideshow"><img src="{{ asset('front/images/banner.jpg') }}" loading="lazy"
                                     sizes="(max-width: 991px) 100vw, 80vw" alt="" class="img-slide-hero"></div>
                         </div>
                         <div data-w-id="49beb054-8ac3-0a15-8c1c-26ce33c6d113"
@@ -118,50 +117,7 @@
                 </div>
             </div>
         </div>
-        <div class="section">
-            <div class="container">
-                <div class="sticky-wrapper">
-                    <div class="sticky-title">
-                        <div class="section-label_small">
-                            <div class="small-text">Secciones</div>
-                        </div>
-                        <div class="sticky-heading">
-                            <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur exercitationem aliquam
-                                obcaecati
-                                eligendi, similique qui reprehenderit illo, </span></h2>
-                        </div>
-                    </div>
-                    <div class="sticky-items">
-                        <div class="w-dyn-list">
-                            <div role="list" class="w-dyn-items">
-                                <div role="listitem" class="w-dyn-item">
-                                    <div data-w-id="e1e471e2-a01c-0ac3-4fd6-e4bb59c33948" style="opacity:0"
-                                        class="item-wrapper">
-                                        <div class="small-text is--gray"></div>
-                                        <div class="icon-articles">
-                                            <div class="g-shape"></div>
-                                            <div class="g-shape is--filp"></div>
-                                        </div>
-                                        <div class="w-dyn-list">
-                                            <div role="list" class="w-dyn-items">
-                                                <div role="listitem" class="collection-item w-dyn-item">
-                                                    <div class="small-text is--gray is--list">by</div>
-                                                    <div class="small-text">Vacantes</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <h3></h3>
-                                        <p></p>
-                                        <a href="#" class="button is--ghost left-align w-button">Leer</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @include('front.layouts.partials._spots_section')
         <div class="section">
             <div class="container is--max_width">
                 <div class="cta-wrapper">
@@ -177,8 +133,8 @@
                                         vitae possimus, facere, </h2>
                                 </div>
                                 <!--
-                        <a href="#" class="button w-button">LEARN MORE</a>
-                        -->
+                                                                    <a href="#" class="button w-button">LEARN MORE</a>
+                                                                    -->
                             </div>
                         </div>
                     </div>
@@ -188,35 +144,7 @@
                 </div>
             </div>
         </div>
-        <div class="section">
-            <div class="container is--members">
-                <div class="members">
-                    <div class="w-dyn-list">
-                        <div role="list" class="w-dyn-items">
-                            <div role="listitem" class="w-dyn-item">
-                                <a data-w-id="90b52bae-8399-31dc-33e4-968615b62e5b" href="#"
-                                    class="member-wrapper w-inline-block">
-                                    <div data-w-id="145af38a-5e35-0aee-12e9-d758947d89ba" class="member-stripe">
-                                        <div class="name-parent">
-                                            <div data-w-id="145af38a-5e35-0aee-12e9-d758947d89bc" class="name-container">
-                                                <h4 class="member-name"></h4>
-                                                <h4 class="member-name"></h4>
-                                            </div>
-                                        </div>
-                                        <div class="title-member"></div>
-                                    </div>
-                                    <div data-w-id="611c5230-4ece-ed13-39b3-9f84251dd2b1" class="member-image"><img
-                                            src="" loading="lazy" alt="" class="member-img"></div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="w-dyn-empty">
-                            <div>Banners</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @include('front.layouts.partials._promo_banner')
         <div class="section">
             <div class="container is--max_width">
                 <div class="cta-wrapper">
@@ -231,8 +159,8 @@
                                     deserunt dolorum error in vero, voluptas asperiores </h2>
                             </div>
                             <!--
-                      <a href="#" class="button w-button">LEARN MORE</a>
-                      -->
+                                                                  <a href="#" class="button w-button">LEARN MORE</a>
+                                                                  -->
                         </div>
                     </div>
                     <div class="cta-gradient">

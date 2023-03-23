@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 
+use App\Models\Job;
 use App\Models\Post;
 use App\Models\Banner;
-use App\Models\Project;
 
+use App\Models\Project;
 use App\Models\Category;
 use App\Models\LegalText;
 use Illuminate\Http\Request;
@@ -28,22 +29,20 @@ class FrontController extends Controller
             ->with('posts', $posts);
     }
 
-    public function about()
+    public function jobs()
     {
-        $projects = Project::where('is_active', true)->orderBy('created_at', 'asc')->get()->take(6);
+        $jobs = Job::where('status', true)->orderBy('created_at', 'asc')->paginate(15);
 
-        return view('front.about')
-            ->with('projects', $projects);
+        return view('front.jobs')
+            ->with('jobs', $jobs);
     }
 
-    public function detail($slug)
+    public function job($slug)
     {
-        $project = Project::where('slug', $slug)->first();
-        $projects = Project::where('is_active', true)->where('name', '!=', $project->name)->orderBy('created_at', 'asc')->get()->take(6);
+        $job = job::where('slug', $slug)->first();
 
-        return view('front.detail_project')
-            ->with('project', $project)
-            ->with('projects', $projects);
+        return view('front.job_detail')
+            ->with('job', $job);
     }
 
     public function projects()

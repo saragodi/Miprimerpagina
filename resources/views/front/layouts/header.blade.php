@@ -11,10 +11,10 @@
         </div>
     </div>
     <div class="nav-links">
-        <a href="#" class="nav-link">Section</a>
-        <a href="#" class="nav-link">Section</a>
-        <a href="#" class="nav-link">Section</a>
-        <a href="#" class="nav-link">Section</a>
+        <a href="{{ route('index') }}" class="nav-link">Inicio</a>
+        <a href="#" class="nav-link">Nosotros</a>
+        <a href="{{ route('index') }}/#vacantes" class="nav-link">Vacantes</a>
+        <a href="#" class="nav-link">Empresas</a>
         <a href="#" class="nav-button w-button">Contacto</a>
     </div>
 </nav>

@@ -150,6 +150,18 @@ Route::get('/', [
     'as' => 'index',
 ]);
 
+Route::get('/vacantes', [
+    'uses' => 'FrontController@jobs',
+    'as' => 'jobs',
+]);
+
+Route::get('/vacantes/{slug}', [
+    'uses' => 'FrontController@job',
+    'as' => 'job.detail'
+])->where('slug', '[\w\d\-\_]+');
+
+
+
 Route::get('sobre_nosotros', [
     'uses' => 'FrontController@about',
     'as' => 'about',
