@@ -14,7 +14,7 @@
                 </div>
             </div>
         </div>
-        <p></p>
+        <p>{{ $job->about }}</p>
         <a href="{{ route('job.detail', $job->slug) }}" class="button is--ghost left-align w-button">
             Leer <ion-icon name="arrow-forward-outline"></ion-icon>
         </a>

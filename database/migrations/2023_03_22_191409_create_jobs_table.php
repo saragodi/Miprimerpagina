@@ -29,6 +29,7 @@ class CreateJobsTable extends Migration
             $table->string('experience')->nullable();
             $table->string('modality')->nullable();
 
+            $table->longText('preview')->nullable();
             $table->longText('about')->nullable();
 
 
