@@ -112,7 +112,6 @@
     @include('front.layouts.footer')
 
     @include('front.layouts.partials._cookies_notice')
-    @include('front.layouts.partials._modal_popup')
 
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=638e6fa2a986f4769c6ff0ef"
         type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous">

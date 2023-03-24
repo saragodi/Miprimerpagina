@@ -170,6 +170,7 @@
     </div>
 </div>
 
+
 @push('scripts')
     <script type="text/javascript" src="https://milankyncl.github.io/jquery-copy-to-clipboard/jquery.copy-to-clipboard.js">
     </script>

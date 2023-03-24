@@ -1,6 +1,10 @@
 @extends('front.layouts.main')
 
 @section('content')
+    @foreach ($jobs as $job)
+        @include('front.layouts.partials._job_detail')
+    @endforeach
+
     <div class="page-content">
         <div class="section no-scroll">
             <div class="container is--max_width">

@@ -14,9 +14,22 @@
                 </div>
             </div>
         </div>
-        <p>{{ $job->about }}</p>
-        <a href="{{ route('job.detail', $job->slug) }}" class="button is--ghost left-align w-button">
+        <p>{{ $job->preview }}</p>
+        <a href="javascript:void(0)" id="job_{{ $job->slug }}" class="button is--ghost left-align w-button">
             Leer <ion-icon name="arrow-forward-outline"></ion-icon>
         </a>
     </div>
 </div>
+
+
+@push('scripts')
+    <script>
+        $('#job_{{ $job->slug }}').on('click', function() {
+            $('#detail_{{ $job->slug }}').addClass('active');
+        });
+
+        $('#detail_{{ $job->slug }} .overlay').on('click', function() {
+            $('#detail_{{ $job->slug }}').removeClass('active');
+        });
+    </script>
+@endpush

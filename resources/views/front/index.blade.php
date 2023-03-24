@@ -1,6 +1,19 @@
 @extends('front.layouts.main')
 
 @section('content')
+    @php
+        
+        $jobs = App\Models\Job::where('status', true)
+            ->orderBy('created_at', 'asc')
+            ->get()
+            ->take(4);
+        
+    @endphp
+
+    @foreach ($jobs as $job)
+        @include('front.layouts.partials._job_detail')
+    @endforeach
+
     <div class="page-content">
         <div class="section no-scroll">
             <div class="container is--max_width">
@@ -133,8 +146,8 @@
                                         vitae possimus, facere, </h2>
                                 </div>
                                 <!--
-                                                                    <a href="#" class="button w-button">LEARN MORE</a>
-                                                                    -->
+                                                                                <a href="#" class="button w-button">LEARN MORE</a>
+                                                                                -->
                             </div>
                         </div>
                     </div>
@@ -159,8 +172,8 @@
                                     deserunt dolorum error in vero, voluptas asperiores </h2>
                             </div>
                             <!--
-                                                                  <a href="#" class="button w-button">LEARN MORE</a>
-                                                                  -->
+                                                                              <a href="#" class="button w-button">LEARN MORE</a>
+                                                                              -->
                         </div>
                     </div>
                     <div class="cta-gradient">

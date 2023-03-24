@@ -20,18 +20,16 @@ class FrontController extends Controller
         $today = Carbon::now()->format('Y-m-d');
 
         $banners = Banner::where('is_active', true)->orderBy('priority', 'asc')->get();
-        $projects = Project::where('is_active', true)->orderBy('created_at', 'asc')->get()->take(6);
         $posts = Post::where('is_publish', true)->where('publish_date', '<=', $today)->orderBy('created_at', 'asc')->get()->take(6);
 
         return view('front.index')
             ->with('banners', $banners)
-            ->with('projects', $projects)
             ->with('posts', $posts);
     }
 
     public function jobs()
     {
-        $jobs = Job::where('status', true)->orderBy('created_at', 'asc')->paginate(15);
+        $jobs = Job::where('status', true)->orderBy('created_at', 'asc')->paginate(10);
 
         return view('front.jobs')
             ->with('jobs', $jobs);
