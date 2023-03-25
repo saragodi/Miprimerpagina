@@ -1625,7 +1625,7 @@ p {
   }
 
   .sticky-items {
-    width: auto;
+    width: 100%;
   }
 
   .item-wrapper {
@@ -1841,9 +1841,61 @@ p {
 }
 
 .job-detail .job {
-  width: 50%;
+  width: 70vw;
   height: 100%;
   background-color: #121e2b;
   z-index: 2;
   padding: 30px;
+  overflow-y: scroll;
+}
+
+.job-detail .job-form {
+  background: transparent !important;
+  border: 1px solid #fff;
+}
+
+.job-detail .job-form p {
+  color: #72777c;
+}
+
+@media (max-width:900px) {
+  .job-detail .job {
+    width: 100%;
+  }
+}
+
+.job-detail .apply-form {
+  height: 0px;
+  opacity: 0;
+  transition: all .3s ease-in-out;
+}
+
+.job-detail .apply-form.show {
+  height: auto;
+  opacity: 1;
+  transition: all .3s ease-in-out;
+}
+
+.job-detail .apply-form form {
+  display: none;
+}
+
+.job-detail .apply-form.show form {
+  display: block;
+}
+
+.about-job p,
+.about-job li,
+.about-job {
+  line-height: 1.7rem;
+}
+
+.job-detail .close-job:hover ion-icon {
+  margin-right: 10px;
+  transition: all .2s ease-in;
+}
+
+.card-detail-b:hover ion-icon {
+  margin-left: 10px;
+  transition: all .2s ease-in;
 }

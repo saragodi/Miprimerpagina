@@ -3,14 +3,16 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
-
 use App\Models\Job;
+
 use App\Models\Post;
 use App\Models\Banner;
-
 use App\Models\Project;
+
 use App\Models\Category;
+use App\Models\Applicant;
 use App\Models\LegalText;
+use Str;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -41,6 +43,46 @@ class FrontController extends Controller
 
         return view('front.job_detail')
             ->with('job', $job);
+    }
+
+    public function applyTo(Request $request, $id)
+    {
+
+        $applicant = new Applicant;
+
+        $applicant->job_id = $id;
+
+        $applicant->names = $request->names;
+        $applicant->lastnames = $request->lastnames;
+        $applicant->phone = $request->phone;
+        $applicant->email = $request->email;
+
+        /* Crear Slug del Nombre */
+        $nameslug = Str::slug($request->names);
+
+        if ($request->hasFile('file')) {
+            $archivo = $request->file('file');
+            $filename = $nameslug . '-cv.'   . $archivo->getClientOriginalExtension();
+
+            $location = public_path('img/clients/files/');
+            $archivo->move($location, $filename);
+
+            $applicant->file = $filename;
+        }
+
+        $applicant->save();
+
+        dd($applicant);
+
+        $banners = Banner::where('is_active', true)->orderBy('priority', 'asc')->get();
+        $posts = Post::where('is_publish', true)->where('publish_date', '<=', $today)->orderBy('created_at', 'asc')->get()->take(6);
+
+        return view('front.index')
+            ->with('banners', $banners)
+            ->with(
+                'posts',
+                $posts
+            );
     }
 
     public function projects()

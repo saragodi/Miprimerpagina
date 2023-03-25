@@ -15,7 +15,8 @@
             </div>
         </div>
         <p>{{ $job->preview }}</p>
-        <a href="javascript:void(0)" id="job_{{ $job->slug }}" class="button is--ghost left-align w-button">
+        <a href="javascript:void(0)" id="job_{{ $job->slug }}"
+            class="button card-detail-b is--ghost left-align w-button">
             Leer <ion-icon name="arrow-forward-outline"></ion-icon>
         </a>
     </div>
@@ -29,6 +30,10 @@
         });
 
         $('#detail_{{ $job->slug }} .overlay').on('click', function() {
+            $('#detail_{{ $job->slug }}').removeClass('active');
+        });
+
+        $('#detail_{{ $job->slug }} .close-job').on('click', function() {
             $('#detail_{{ $job->slug }}').removeClass('active');
         });
     </script>

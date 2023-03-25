@@ -160,7 +160,10 @@ Route::get('/vacantes/{slug}', [
     'as' => 'job.detail'
 ])->where('slug', '[\w\d\-\_]+');
 
-
+Route::put('apply_job/{id}', [
+    'uses' => 'FrontController@applyTo',
+    'as' => 'apply.to',
+]);
 
 Route::get('sobre_nosotros', [
     'uses' => 'FrontController@about',
