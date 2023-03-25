@@ -64,7 +64,7 @@ class FrontController extends Controller
             $archivo = $request->file('file');
             $filename = $nameslug . '-cv.'   . $archivo->getClientOriginalExtension();
 
-            $location = public_path('img/clients/files/');
+            $location = public_path('docs/applicants/');
             $archivo->move($location, $filename);
 
             $applicant->file = $filename;
