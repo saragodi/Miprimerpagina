@@ -21,11 +21,11 @@ class FrontController extends Controller
     {
         $today = Carbon::now()->format('Y-m-d');
 
-        $banners = Banner::where('is_active', true)->orderBy('priority', 'asc')->get();
+        $banner = Banner::where('is_active', true)->orderBy('priority', 'asc')->get()->take(1);
         $posts = Post::where('is_publish', true)->where('publish_date', '<=', $today)->orderBy('created_at', 'asc')->get()->take(6);
 
         return view('front.index')
-            ->with('banners', $banners)
+            ->with('banner', $banner)
             ->with('posts', $posts);
     }
 

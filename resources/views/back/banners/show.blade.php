@@ -1,4 +1,4 @@
-@extends('back.layouts.main')
+@extends('layout.master')
 
 @section('stylesheets')
     <style>
@@ -79,15 +79,12 @@
 @endsection
 
 @section('title')
-    <div class="d-sm-flex align-items-center justify-content-between mg-lg-b-30">
-        <div>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb breadcrumb-style1 mg-b-10">
-                    <li class="breadcrumb-item"><a href="#">lantana</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Banners</li>
-                </ol>
-            </nav>
-            <h4 class="mg-b-0 tx-spacing--1">Banners</h4>
+    <div class="title-content justify-content-between px-0" style="border-top: none">
+        <div class="d-flex align-items-center">
+            <div class="title-icon">
+                <i class="link-icon" data-feather="archive"></i>
+            </div>
+            <h4>Banners</h4>
         </div>
     </div>
 @endsection

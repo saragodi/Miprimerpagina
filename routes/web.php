@@ -14,62 +14,86 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'can:admin_access']],
         'as' => 'change.nav',
     ]);
 
-
-
-    Route::get('/mensajes-actualizaciones', [
-        'uses' => 'DashboardController@messages',
-        'as' => 'update.messages',
-    ]);
-
-    Route::resource('banners', 'BannerController');
+    //Banners
+    Route::resource('banners', BannerController::class);
 
     Route::post('/banners/status/{id}', [
         'uses' => 'BannerController@status',
         'as' => 'banners.status',
     ]);
 
-    Route::resource('popups', PopupController::class);
+    //Vacantes
+    Route::resource('jobs', JobController::class);
 
-    Route::post('/popups/status/{id}', [
-        'uses' => 'PopupController@status',
-        'as' => 'popups.status',
-    ]);
+    //Campañas
+
 
     //Configuration
     Route::get('/configuration', 'DashboardController@configuration')->name('configuration'); //
+
+    //CONFIGURACIÓN
+    Route::get('/configuracion', [
+        'uses' => 'DashboardController@admin_settings',
+        'as' => 'admin.settings',
+    ]);
+
+    Route::get('/configuracion/temas', [
+        'uses' => 'DashboardController@settings_look',
+        'as' => 'admin.settings_look',
+    ]);
+
+    Route::get('/configuracion/usuarios_y_permisos', [
+        'uses' => 'DashboardController@users',
+        'as' => 'admin.users',
+    ]);
+
+    Route::put('/configuracion/usuarios_y_permisos/crear_usuario', [
+        'uses' => 'DashboardController@create_u',
+        'as' => 'admin.users.create'
+    ]);
+
+    Route::delete('/configuracion/usuarios/{id}', [
+        'uses' => 'DashboardController@user_d',
+        'as' => 'admin.user.delete'
+    ]);
+
+
+
+    Route::get('/configuracion/sistema', [
+        'uses' => 'DashboardController@systemConfig',
+        'as' => 'admin.system',
+    ]);
+
+    Route::get('/configuracion/notificaciones', [
+        'uses' => 'DashboardController@alerts',
+        'as' => 'admin.notificactions'
+    ]);
+
+    Route::get('/configuracion/notificaciones/{name}/status', [
+        'uses' => 'DashboardController@alertStatus',
+        'as' => 'admin.notificactions.status',
+    ]);
+
+
+    Route::put('/configuracion/actualizar-password/{id}', [
+        'uses' => 'UserController@updatePassword',
+        'as' => 'user.update.pass',
+    ]);
+
+    Route::put('/configuracion/actualizar-cuenta/{id}', [
+        'uses' => 'UserController@update',
+        'as' => 'user.update.account'
+    ]);
+
+    Route::put('/configuracion/usuario/{id}/eliminar', [
+        'uses' => 'UserController@destroy',
+        'as' => 'delete.user'
+    ]);
 
     //Catalog
     Route::post('/get-subcategories', [
         'uses' => 'ProductController@fetchSubcategory',
         'as' => 'dynamic.subcategory',
-    ]);
-
-    //Proyectos
-    Route::resource('projects', ProjectController::class);
-
-    Route::post('/projects/status/{id}', [
-        'uses' => 'ProjectController@status',
-        'as' => 'projects.status',
-    ]);
-
-    Route::post('project/new-image', [
-        'uses' => 'ProjectController@storeImage',
-        'as' => 'image.store',
-    ]);
-
-    Route::post('project/main-image', [
-        'uses' => 'ProjectController@mainImage',
-        'as' => 'main.image.update'
-    ]);
-
-    Route::post('project/update-image/{id}', [
-        'uses' => 'ProjectController@updateImage',
-        'as' => 'image.update',
-    ]);
-
-    Route::delete('project/delete-image/{id}', [
-        'uses' => 'ProjectController@destroyImage',
-        'as' => 'image.destroy',
     ]);
 
     //Públicaciones
@@ -87,12 +111,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'can:admin_access']],
         'as' => 'user-rules.status',
     ]);
 
-    Route::get('clientsquery', [
-        'uses' => 'ClientController@query',
-        'as' => 'clients.search',
-    ]);
-
-    Route::resource('newsletter', NewsletterController::class); //
     //Administration
     Route::get('general-preferences', [
         'uses' => 'IntegrationController@index',
@@ -163,51 +181,6 @@ Route::get('/vacantes/{slug}', [
 Route::put('apply_job/{id}', [
     'uses' => 'FrontController@applyTo',
     'as' => 'apply.to',
-]);
-
-Route::get('sobre_nosotros', [
-    'uses' => 'FrontController@about',
-    'as' => 'about',
-]);
-
-//Proyectos
-Route::get('/proyectos/{slug}', [
-    'uses' => 'FrontController@detail',
-    'as' => 'detail',
-])->where('slug', '[\w\d\-\_]+');
-
-Route::get('/proyectos', [
-    'uses' => 'FrontController@projects',
-    'as' => 'allProjects',
-]);
-
-
-
-//Blog
-Route::get('/publicacion/{slug}', [
-    'uses' => 'FrontController@detailPost',
-    'as' => 'postDetail'
-])->where('slug', '[\w\d\-\_]+');
-
-Route::get('/publicaciones', [
-    'uses' => 'FrontController@posts',
-    'as' => 'allPost',
-]);
-
-Route::get('/publicaciones/{category_slug}', [
-    'uses' => 'FrontController@category',
-    'as' => 'category',
-]);
-
-
-/* Newsletter */
-Route::post('registro-newsletter', 'FrontController@newsletter')->name('newsletter_front.store');
-
-
-/* Search Functions */
-Route::get('/busqueda-general', [
-    'uses' => 'SearchController@query',
-    'as' => 'search.query',
 ]);
 
 

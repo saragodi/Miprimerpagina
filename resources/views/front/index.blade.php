@@ -146,8 +146,8 @@
                                         vitae possimus, facere, </h2>
                                 </div>
                                 <!--
-                                                                                <a href="#" class="button w-button">LEARN MORE</a>
-                                                                                -->
+                                                                                    <a href="#" class="button w-button">LEARN MORE</a>
+                                                                                    -->
                             </div>
                         </div>
                     </div>
@@ -172,8 +172,8 @@
                                     deserunt dolorum error in vero, voluptas asperiores </h2>
                             </div>
                             <!--
-                                                                              <a href="#" class="button w-button">LEARN MORE</a>
-                                                                              -->
+                                                                                  <a href="#" class="button w-button">LEARN MORE</a>
+                                                                                  -->
                         </div>
                     </div>
                     <div class="cta-gradient">

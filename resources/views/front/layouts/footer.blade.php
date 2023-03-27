@@ -1,8 +1,8 @@
 <div class="footer">
     <div class="two-col-footer">
         <div class="footer-row">
-            <div class="footer-logo"><img src="images/logo-flow.svg" loading="lazy" width="75" alt=""
-                    class="logo is--footer"></div>
+            <div class="footer-logo"><img src="{{ asset('img/logo/derch-w.png') }}" loading="lazy" width="75"
+                    alt="" class="logo is--footer"></div>
             <div class="footer-links">
                 <a href="#" class="nav-link">Section</a>
                 <a href="#" class="nav-link">Section</a>

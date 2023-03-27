@@ -20,6 +20,8 @@ use Illuminate\Http\Request;
 use App\Models\PaymentMethod;
 use App\Models\ShipmentMethod;
 
+use Spatie\Permission\Models\Role;
+
 class DashboardController extends Controller
 {
     public function __construct()
@@ -79,22 +81,103 @@ class DashboardController extends Controller
             $avg_order = ($ven_total)/($ventas_total->count());
         }
 
-        */
-
-        $banners = Banner::where('is_active', true)->get();
+          $banners = Banner::where('is_active', true)->get();
         $projects = Project::where('is_active', true)->get();
         $posts = Post::where('is_publish', 1)->get();
 
 
-        return view('back.index')
-            ->with('banners', $banners)
-            ->with('projects', $projects)
-            ->with('posts', $posts);
+
+        */
+
+
+        return view('back.dashboard');
     }
 
     public function configuration()
     {
         return view('back.configuration');
+    }
+
+    public function admin_settings()
+    {
+        $user = Auth::user();
+
+        return view('back.settings.index')
+            ->with('user', $user);
+    }
+
+    public function systemConfig()
+    {
+        $webmaster = User::role('webmaster')->get();
+        $admin  = User::role('admin')->get();
+        $analyst  = User::role('analyst')->get();
+        $users = $webmaster->merge($admin->merge($analyst));
+        $roles = Role::where('name', '!=', 'customer')->get();
+
+        return view('back.settings.system')->with('users', $users)->with('roles', $roles);
+    }
+
+    public function users()
+    {
+        if (Auth::user()->hasRole(['webmaster', 'admin'])) {
+            $webmaster = User::role('webmaster')->get();
+            $admin  = User::role('admin')->get();
+            $analyst  = User::role('analyst')->get();
+            $users = $webmaster->merge($admin->merge($analyst));
+        }
+
+        $roles = Role::where('name', '!=', 'customer')->where('name', '!=', 'supplier')->get();
+
+        return view('back.settings.users')
+            ->with('users', $users)
+            ->with('roles', $roles);
+    }
+
+    public function create_u(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'email|required|unique:users',
+            'password' => 'required|min:4',
+        ]);
+
+        $admin = new User([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => bcrypt($request->input('password')),
+        ]);
+
+        if (Auth::user()->hasRole(['webmaster', 'admin', 'supplier'])) {
+            $admin->supplier_id = Auth::user()->supplier_id;
+        }
+
+        if (Auth::user()->hasRole(['supplier'])) {
+            $admin->assignRole('supplier');
+        }
+
+        if (Auth::user()->hasRole(['customer'])) {
+            $admin->client_id = Auth::user()->client_id;
+            $admin->assignRole('customer');
+        }
+
+        $rol = Role::findByName($request->rol);
+
+        // Guardar primero el admin
+        $admin->save();
+
+        // Asignar el Rol
+        $admin->assignRole($rol->name);
+
+        return redirect()->back();
+    }
+
+    public function user_d($id)
+    {
+        $user = User::find($id);
+
+        $user->delete();
+
+        return redirect()->back();
     }
 
 
