@@ -16,4 +16,11 @@
 @endsection
 
 @section('content')
+    <nav aria-label="breadcrumb" class="mb-2">
+        <ol class="breadcrumb ps-0">
+            <li class="breadcrumb-item"><a href="{{ route('jobs.index') }}">Vacantes</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('jobs.create') }}">Creación de
+                    vacante</a></li>
+        </ol>
+    </nav>
 @endsection

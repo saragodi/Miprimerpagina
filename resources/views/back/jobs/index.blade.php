@@ -16,6 +16,17 @@
 @endsection
 
 @section('content')
+
+
+    <nav aria-label="breadcrumb" class="mb-2">
+        <ol class="breadcrumb ps-0">
+            <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('jobs.index') }}">Vacantes</a></li>
+        </ol>
+    </nav>
+
+    <h3 class="mb-3">Listado de Vacantes</h3>
+
+
     @if ($jobs->count() == 0)
         <div class="card card-body text-center" style="padding:80px 0px 100px 0px;">
             <img src="{{ asset('assets/img/group_7.svg') }}" class="wd-20p ml-auto mr-auto mb-5">
