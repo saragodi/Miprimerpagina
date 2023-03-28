@@ -58,8 +58,7 @@
             <div class="card card-body job-form pt-2">
                 <form action="{{ route('apply.to', $job->id) }}" method="post" enctype="multipart/form-data">
 
-                    {{ csrf_field() }}
-                    {{ method_field('PUT') }}
+                    {{ csrf_field() }}  
 
                     <div class="d-flex justify-content-between align-items-center mb-1">
                         <h3 style="font-weight:600;">Tus datos</h3>

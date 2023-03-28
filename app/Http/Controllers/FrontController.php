@@ -13,6 +13,14 @@ use App\Models\Category;
 use App\Models\Applicant;
 use App\Models\LegalText;
 use Str;
+
+use Auth;
+use Session;
+
+use Image;
+
+use Mail;
+use File;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -22,11 +30,9 @@ class FrontController extends Controller
         $today = Carbon::now()->format('Y-m-d');
 
         $banner = Banner::where('is_active', true)->orderBy('priority', 'asc')->get()->take(1);
-        $posts = Post::where('is_publish', true)->where('publish_date', '<=', $today)->orderBy('created_at', 'asc')->get()->take(6);
 
         return view('front.index')
-            ->with('banner', $banner)
-            ->with('posts', $posts);
+            ->with('banner', $banner);
     }
 
     public function jobs()
@@ -60,6 +66,7 @@ class FrontController extends Controller
         /* Crear Slug del Nombre */
         $nameslug = Str::slug($request->names);
 
+
         if ($request->hasFile('file')) {
             $archivo = $request->file('file');
             $filename = $nameslug . '-cv.'   . $archivo->getClientOriginalExtension();
@@ -72,17 +79,58 @@ class FrontController extends Controller
 
         $applicant->save();
 
-        dd($applicant);
+        $job = Job::find($id);
 
-        $banners = Banner::where('is_active', true)->orderBy('priority', 'asc')->get();
-        $posts = Post::where('is_publish', true)->where('publish_date', '<=', $today)->orderBy('created_at', 'asc')->get()->take(6);
+        //Correo
+        $data = array(
+            'name' => $applicant->names,
+            'email' => $applicant->email,
+            'lastname' => $applicant->lastnames,
+            'phone' => $applicant->phone,
+            'job' => $job->name,
+        );
 
-        return view('front.index')
-            ->with('banners', $banners)
-            ->with(
-                'posts',
-                $posts
-            );
+        $email = $applicant->email;
+        $name = $applicant->name;
+
+        $files = [
+            public_path('docs/applicants/' . $applicant->file),
+        ];
+
+
+        try {
+            Mail::send('mail.apply', $data, function ($message) use ($data, $email, $name) {
+                $message->to($email, $name)->subject('Hey! Gracias por tu postulación.');
+
+                $message->from('postulaciones.derch@gmail.com', 'Derch');
+            });
+
+            Mail::send('mail.new_user', $data, function ($message) use ($files) {
+                $message->to('miriam.derch@gmail.com', 'Derch')->subject('Hey! Se han postulado para una vacante');
+
+                $message->from('postulaciones.derch@gmail.com', 'Derch');
+
+                foreach ($files as $file) {
+                    $message->attach($file);
+                }
+            });
+
+
+            $banner = Banner::where('is_active', true)->orderBy('priority', 'asc')->get()->take(1);
+
+            return view('front.index')
+                ->with('banner', $banner);
+        } catch (Exception $e) {
+
+            Session::flash('error', 'No se ha identificado servidor SMTP en la plataforma. Configuralo correctamente para enviar correos desde tu sistema.');
+            return response()->json(['mensaje' => 'No se ha identificado servidor SMTP en la plataforma. Configuralo correctamente para enviar correos desde tu sistema.'], 200);
+
+            $banner = Banner::where('is_active', true)->orderBy('priority', 'asc')->get()->take(1);
+
+
+            return view('front.index')
+                ->with('banner', $banner);
+        }
     }
 
     public function projects()

@@ -43,7 +43,7 @@
                         </thead>
                         <tbody>
 
-                            @foreach ($job->applicants as $applicant)
+                            @foreach ($applicants as $applicant)
                                 <tr>
                                     <td>{{ $applicant->names }} {{ $applicant->lastnames }}</td>
                                     <td>
@@ -90,8 +90,15 @@
                                 </tr>
                             @endforeach
 
+
+
                         </tbody>
                     </table>
+                </div>
+                <div class="row justify-items-center">
+                    <div class="col text-center">
+                        {{ $applicants->links() }}
+                    </div>
                 </div>
             </div>
         </div>
