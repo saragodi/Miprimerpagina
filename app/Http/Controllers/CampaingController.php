@@ -22,7 +22,28 @@ class CampaingController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $campaing = new Campaing;
+
+        $campaing->name = $request->name;
+        $campaing->link = $request->link;
+
+        $campaing->description = $request->description;
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $filename = 'camapaing' . time() . '.' . $image->getClientOriginalExtension();
+            $location = public_path('img/campaings/' . $filename);
+
+            Image::make($image)->resize(1280, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save($location);
+
+            $campaing->image = $filename;
+        }
+
+        $campaing->save();
+
+        return redirect()->back();
     }
 
     public function show(Campaing $campaing)

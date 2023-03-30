@@ -35,6 +35,12 @@ class JobController extends Controller
 
     public function store(Request $request)
     {
+        //Validar
+        $this->validate($request, array(
+            'name' => 'required|max:255',
+            'about' => 'required',
+        ));
+
         $job = new Job;
 
         $job->name = $request->name;
@@ -90,9 +96,9 @@ class JobController extends Controller
             ->with('job', $job);
     }
 
-    public function update(Request $request, Job $job)
+    public function update(Request $request, $id)
     {
-        //
+        $job = Job::find($id);
     }
 
     public function status($id)
