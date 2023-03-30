@@ -24,7 +24,42 @@
         </ol>
     </nav>
 
-    <h3 class="mb-3">Listado de Vacantes</h3>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        @if (Request::is('admin/jobs'))
+            <h3 class="mb-0">Listado de Vacantes</h3>
+        @else
+            <h3 class="mb-0">Listado de Vacantes en Borrador</h3>
+        @endif
+
+        <div class="d-flex">
+
+            <div class="dropdown me-2">
+                <button class="btn btn-outline-dark " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+                    @if (Request::is('admin/jobs'))
+                        Activos
+                    @else
+                        Borrador
+                    @endif
+                    <ion-icon class="pb-2 ms-2" name="chevron-down-outline"></ion-icon>
+                </button>
+                <ul class="dropdown-menu">
+                    @if (Request::is('admin/jobs'))
+                        <li><a class="dropdown-item" href="{{ route('jobs.archive') }}">Borrador</a>
+                        </li>
+                    @else
+                        <li><a class="dropdown-item" href="{{ route('jobs.index') }}">Activos</a>
+                        </li>
+                    @endif
+                </ul>
+            </div>
+
+            <a href="{{ route('jobs.create') }}" class="btn btn-primary">
+                <ion-icon class="pb-2 me-2" name="add-circle-outline"></ion-icon>
+                Crear vacante
+            </a>
+        </div>
+    </div>
 
 
     @if ($jobs->count() == 0)
@@ -57,10 +92,33 @@
                                         <td>{{ $job->applicants->count() }}</td>
 
                                         <td>
+
                                             @if ($job->status == true)
-                                                <span class="badge badge-success">Activado</span><br>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-success " type="button"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        Publicado
+                                                        <ion-icon class="pb-2 ms-2" name="chevron-down-outline"></ion-icon>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item"
+                                                                href="{{ route('jobs.status', $job->id) }}">Borrador</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             @else
-                                                <span class="badge badge-info">Desactivado</span><br>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-danger " type="button" data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                        Borrador
+                                                        <ion-icon class="pb-2 ms-2" name="chevron-down-outline"></ion-icon>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item"
+                                                                href="{{ route('jobs.status', $job->id) }}">Publicar</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             @endif
                                         </td>
 

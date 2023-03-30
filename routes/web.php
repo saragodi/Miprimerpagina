@@ -17,7 +17,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'can:admin_access']],
     //Banners
     Route::resource('banners', BannerController::class);
 
-    Route::post('/banners/status/{id}', [
+    Route::get('/banners/status/{id}', [
         'uses' => 'BannerController@status',
         'as' => 'banners.status',
     ]);
@@ -25,8 +25,17 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'can:admin_access']],
     //Vacantes
     Route::resource('jobs', JobController::class);
 
-    //Campañas
+    Route::get('/vacante/cambiar-status/{id}', [
+        'uses' => 'JobController@status',
+        'as' => 'jobs.status',
+    ]);
 
+    Route::get('/vacantes/borrador', [
+        'uses' => 'JobController@archives',
+        'as' => 'jobs.archive',
+    ]);
+    //Campañas
+    Route::resource('campaings', CampaingController::class);
 
     //Configuration
     Route::get('/configuration', 'DashboardController@configuration')->name('configuration'); //
@@ -90,19 +99,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'can:admin_access']],
         'as' => 'delete.user'
     ]);
 
-    //Catalog
-    Route::post('/get-subcategories', [
-        'uses' => 'ProductController@fetchSubcategory',
-        'as' => 'dynamic.subcategory',
-    ]);
 
     //Públicaciones
     Route::resource('posts', PostController::class);
 
     // Get Functions
     Route::resource('categories', CategoryController::class); //
-
-    Route::resource('clients', ClientController::class);
 
     Route::resource('user-rules', UserRuleController::class);
 
@@ -112,10 +114,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'can:admin_access']],
     ]);
 
     //Administration
-    Route::get('general-preferences', [
-        'uses' => 'IntegrationController@index',
-        'as' => 'general.config',
-    ]);
     Route::resource('seo', SEOController::class); //
     Route::resource('legals', LegalTextController::class);
     Route::resource('faq', FAQController::class);
@@ -124,43 +122,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'can:admin_access']],
     Route::get('user/config', 'UserController@config')->name('user.config');  //
     Route::get('user/help', 'DashboardController@help')->name('user.help');  //
 
-    Route::resource('template', MailThemeController::class); //
-    Route::resource('mail', MailController::class)->except(['show, create, index']);
-    Route::resource('notifications', NotificationController::class)->except(['show']); //
 
-    Route::get('/notifications/all', [
-        'uses' => 'NotificationController@all',
-        'as' => 'notifications.all',
-    ]);
-
-    Route::get('/notifications/all/mark-as-read', [
-        'uses' => 'NotificationController@markAsRead',
-        'as' => 'notifications.mark.read',
-    ]);
-
-    //Country
-    //Route::resource('countries', CountryController::class);
-    Route::resource('config', StoreConfigController::class);
-
-    // Sección Soporte
-    Route::get('support', 'DashboardController@shipping')->name('support.help');
-
-    /* Rutas de Correo */
-    Route::post('/resend-order-mail/{order_id}', [
-        'uses' => 'NotificationController@resendOrder',
-        'as' => 'resend.order.mail',
-    ]);
-
-    Route::post('/resend-invoice-mail/{invoice_id}', [
-        'uses' => 'NotificationController@resendInvoice',
-        'as' => 'resend.invoice.mail',
-    ]);
-
-    // Búsqueda
-    Route::get('/busqueda-general', [
-        'uses' => 'DashboardController@generalSearch',
-        'as' => 'back.search.query',
-    ]);
 });
 
 Route::get('/', [

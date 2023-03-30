@@ -31,65 +31,6 @@ class DashboardController extends Controller
 
     public function index()
     {
-        /*
-        $product = Product::first();
-        $payment = PaymentMethod::where('is_active', true)->first();
-        $shipment = ShipmentMethod::first();
-        $category = Category::first();
-
-        $total_products = Product::where('status', 'Publicado')->get();
-        $total_stock = 0;
-
-        foreach ($total_products as $t_total) {
-            $total_stock += $t_total->stock;
-        };
-
-        $total_stock;
-
-        $new_clients = User::role('customer')->where('created_at', '>=', Carbon::now()->subWeek())->count();
-
-        $ven_total = 0;
-        $ven_mes = 0;
-        $ven_semana = 0;
-        $ven_semana_prev = 0;
-
-        foreach ($ventas_total as $v_total) {
-            $ven_total += $v_total->payment_total;
-        };
-
-        foreach ($ventas_mes as $v_month) {
-            $ven_mes += $v_month->amount;
-
-        };
-
-        foreach ($ventas_semana as $v_week) {
-            $ven_semana += $v_week->payment_total;
-        };
-
-        foreach ($ventas_semana_prev as $v_week_prev) {
-            $ven_semana_prev += $v_week_prev->payment_total;
-        };
-
-        $ven_total;
-        $ven_mes;
-        $ven_semana;
-        $ven_semana_prev;
-
-        if ($ventas_total->count() == 0) {
-            $avg_order = 0;
-        }else{
-            $avg_order = ($ven_total)/($ventas_total->count());
-        }
-
-          $banners = Banner::where('is_active', true)->get();
-        $projects = Project::where('is_active', true)->get();
-        $posts = Post::where('is_publish', 1)->get();
-
-
-
-        */
-
-
         return view('back.dashboard');
     }
 
@@ -146,19 +87,6 @@ class DashboardController extends Controller
             'email' => $request->input('email'),
             'password' => bcrypt($request->input('password')),
         ]);
-
-        if (Auth::user()->hasRole(['webmaster', 'admin', 'supplier'])) {
-            $admin->supplier_id = Auth::user()->supplier_id;
-        }
-
-        if (Auth::user()->hasRole(['supplier'])) {
-            $admin->assignRole('supplier');
-        }
-
-        if (Auth::user()->hasRole(['customer'])) {
-            $admin->client_id = Auth::user()->client_id;
-            $admin->assignRole('customer');
-        }
 
         $rol = Role::findByName($request->rol);
 

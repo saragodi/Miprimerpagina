@@ -51,12 +51,6 @@
                             @endrole
                              --}}
                             <li class="nav-item">
-                                <a href="" class="nav-link">
-                                    <i data-feather="edit"></i>
-                                    <span>Editar Perfil</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('logout') }}"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     <i data-feather="log-out"></i>

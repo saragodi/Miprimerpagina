@@ -26,78 +26,91 @@
     <div class="row">
 
         <div class="col-md-8">
-            <div class="card card-body">
-                <div class="card-title">
-                    Aplicantes
+            <div class="card" style="overflow: hidden">
+                <div class="d-flex justify-content-between align-items-center py-3 px-4 bg-white"
+                    style="border-bottom: 1px solid black">
+                    <h3 class="mb-0 card-title">Aplicantes</h3>
                 </div>
 
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Nombre</th>
-                                <th>Email</th>
-                                <th>Teléfono</th>
-                                <th>CV</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                <div class="card-body">
+                    @if ($applicants->count() == 0)
+                        <div class="card-body text-center" style="padding:80px 0px 100px 0px;">
+                            <img src="{{ asset('assets/img/group_7.svg') }}" class="wd-20p ml-auto mr-auto mb-5">
+                            <h4>¡No se ha postulado nadie!</h4>
+                        </div>
+                    @else
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Email</th>
+                                        <th>Teléfono</th>
+                                        <th>CV</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
 
-                            @foreach ($applicants as $applicant)
-                                <tr>
-                                    <td>{{ $applicant->names }} {{ $applicant->lastnames }}</td>
-                                    <td>
-                                        <a href="">
-                                            {{ $applicant->email }}
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="">
-                                            {{ $applicant->phone }}
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <div class="item">
-                                            <div class="card file-card">
+                                    @foreach ($applicants as $applicant)
+                                        <tr>
+                                            <td>{{ $applicant->names }} {{ $applicant->lastnames }}</td>
+                                            <td>
+                                                <a href="">
+                                                    {{ $applicant->email }}
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="">
+                                                    {{ $applicant->phone }}
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <div class="item">
+                                                    <div class="card file-card">
 
 
-                                                <div class="card-body">
-                                                    <div class="d-flex justify-content-between align-items-center">
-                                                        <div class="pdf-color">
-                                                            <div class="file-icon">
-                                                                <i class="link-icon" data-feather="file-text"></i>
-                                                                <span class="filename">{{ $applicant->file }}
-                                                                </span>
+                                                        <div class="card-body">
+                                                            <div class="d-flex justify-content-between align-items-center">
+                                                                <div class="pdf-color">
+                                                                    <div class="file-icon">
+                                                                        <i class="link-icon" data-feather="file-text"></i>
+                                                                        <span class="filename">{{ $applicant->file }}
+                                                                        </span>
 
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-options dropdown">
+                                                                    <a href="{{ asset('docs/applicants/' . $applicant->file) }}"
+                                                                        target="_blank" class="icon"
+                                                                        aria-expanded="false"><i class="link-icon"
+                                                                            data-feather="download"></i></a>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="card-options dropdown">
-                                                            <a href="{{ asset('docs/applicants/' . $applicant->file) }}"
-                                                                target="_blank" class="icon" aria-expanded="false"><i
-                                                                    class="link-icon" data-feather="download"></i></a>
+
+
+                                                            <p><a target="_blank"
+                                                                    href="{{ asset('img/clients/files/' . $applicant->file) }}">{{ $applicant->name }}</a>
+                                                            </p>
+                                                            <hr>
+                                                            <small class="upload-time">Subido:
+                                                                {{ $applicant->updated_at }}</small>
                                                         </div>
                                                     </div>
-
-
-                                                    <p><a target="_blank"
-                                                            href="{{ asset('img/clients/files/' . $applicant->file) }}">{{ $applicant->name }}</a>
-                                                    </p>
-                                                    <hr>
-                                                    <small class="upload-time">Subido: {{ $applicant->updated_at }}</small>
-                                                </div>
-                                            </div>
-                                    </td>
-                                </tr>
-                            @endforeach
+                                            </td>
+                                        </tr>
+                                    @endforeach
 
 
 
-                        </tbody>
-                    </table>
-                </div>
-                <div class="row justify-items-center">
-                    <div class="col text-center">
-                        {{ $applicants->links() }}
+                                </tbody>
+                            </table>
+                        </div>
+                    @endif
+
+                    <div class="row justify-items-center">
+                        <div class="col text-center">
+                            {{ $applicants->links() }}
+                        </div>
                     </div>
                 </div>
             </div>

@@ -35,7 +35,7 @@
                 </a>
             </li>
             <li class="nav-item ">
-                <a href="" class="nav-link">
+                <a href="{{ route('campaings.index') }}" class="nav-link">
                     <i class="link-icon" data-feather="key"></i>
                     <span class="link-title">Campañas</span>
                 </a>
