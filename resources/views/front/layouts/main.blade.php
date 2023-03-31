@@ -13,10 +13,23 @@
     <meta content="Home explore" property="og:title">
     <meta content="Home explore" property="twitter:title">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <meta content="{{ $seo->page_title ?? 'Derch' }}" name="generator">
-    <meta name="description" content="{{ $seo->page_title ?? 'Derch' }}">
 
+    <meta content="{{ $seo->page_title ?? 'Derch' }}" name="generator">
+    <meta name="description" content="{{ $seo->page_description ?? 'Derch' }}">
     <meta name="theme-color" content="{{ $seo->page_theme_color_hex ?? '#ffffff' }}">
+    <meta name="keywords" content="{{ $seo->page_keywords ?? '' }}">
+    <link rel="canonical" href="{{ $seo->page_canonical_url ?? '' }}">
+
+    <!--Favicon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4ab2cf">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#ffffff">
+
+
 
     @stack('seo')
 
@@ -103,7 +116,7 @@
     @include('front.layouts.partials._modal_messages')
     @yield('content')
 
-    <a href="https://wa.me/5214777955167?text=Hola!%20Necesito%20más%20información%20de%20sus%20servicios"
+    <a href="https://wa.me/524777955167?text=Hola!%20Necesito%20más%20información%20de%20sus%20servicios"
         class="whatsapp-btn" target="black" data-bs-toggle="tooltip" data-bs-title="Chatea con nosotros!">
         <ion-icon name="logo-whatsapp"></ion-icon>
     </a>

@@ -1326,7 +1326,11 @@ p {
   }
 
   .footer-logo {
-    width: 5em;
+    width: 12em;
+  }
+
+  .logo.is--footer {
+    width: 12.5em;
   }
 
   .field-label {

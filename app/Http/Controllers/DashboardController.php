@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Auth;
 use Session;
+use Image;
+use Str;
 
 use Carbon\Carbon;
 use App\Models\Post;
@@ -15,6 +17,7 @@ use App\Models\Product;
 use App\Models\Project;
 use App\Models\Category;
 use App\Models\StoreConfig;
+use App\Models\SEO;
 
 use Illuminate\Http\Request;
 use App\Models\PaymentMethod;
@@ -152,9 +155,12 @@ class DashboardController extends Controller
         return view('back.messages');
     }
 
-    public function help()
+    public function seo()
     {
-        return view('back.help');
+        $seo = SEO::take(1)->first();
+
+        return view('back.settings.seo')
+            ->with('seo', $seo);
     }
 
     public function generalSearch(Request $request)

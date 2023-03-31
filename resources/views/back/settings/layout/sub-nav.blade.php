@@ -26,7 +26,7 @@
                 @endif
 
                 <li class="sub-item">
-                    <a class="sub-link {{ active_class(['panel/configuracion']) }}" href="{{ route('admin.settings') }}">
+                    <a class="sub-link {{ active_class(['panel/configuracion']) }}" href="{{ route('admin.seos') }}">
                         <i class="link-icon" data-feather="user"></i>
                         <span class="link-title">SEO</span>
                     </a>

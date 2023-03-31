@@ -65,12 +65,6 @@
                 </form>
             </div>
 
-            @if (Auth::user()->change_password == 0)
-                <h6 class="mt-4 text-primary"><strong>¡Importante!</strong> Actualiza tu contraseña a una que solo sea para
-                    ti.
-                </h6>
-            @endif
-
             <div class="card card-body mt-4">
                 <form action="{{ route('user.update.pass', Auth::user()->id) }}" method="POST">
                     {{ csrf_field() }}
@@ -97,92 +91,7 @@
             </div>
         </div>
 
-        <div class="col-md-5 mb-4">
-            <div class="s-d-none d-md-block">
-                <h5 class="mb-5">Foto de perfil</h5>
-                <div class="row">
-                    <div class="col-md-12 d-flex align-items-center justify-content-center mb-4">
-                        <div>
-                            <div
-                                class="d-flex position-relative justify-content-center align-items-center bg-primary rounded-circle overflow-hidden edit-pic mb-3">
-                                <img src="{{ asset('back/img/users/' . Auth::user()->profile_pic) }}" alt="profile">
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#updatePicModal"
-                                    class="position-absolute bottom-0 bg-grey text-white w-100 text-center h-20 pt-1"
-                                    style="opacity: .7; border:none; z-index:5;" href="">Editar</button>
-                            </div>
-                            <div class="d-block d-md-none text-center">
-                                <h4>{{ Auth::user()->name }}</h4>
-                                <p class="text-muted">{{ Auth::user()->getRoleNames() }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            @if (Auth::user()->hasRole(['supplier_master']))
-                <div>
-                    <h5 class="mb-5">Logo de empresa</h5>
-                    <div class="row">
-                        <div class="col-md-12 d-flex align-items-center justify-content-center mb-4">
-
-                            @if (Auth::user()->supplier->logo == null)
-                                <div
-                                    class="d-flex position-relative justify-content-center align-items-center bg-primary rounded-circle overflow-hidden edit-pic">
-                                    <img src="{{ 'https://www.gravatar.com/avatar/' . md5(strtolower(trim(Auth::user()->email))) . '?d=retro&s=100' }}"
-                                        alt="profile">
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#updateLogoModal"
-                                        class="position-absolute bottom-0 bg-grey text-white w-100 text-center h-20 pt-1"
-                                        style="opacity: .7; border:none; z-index:5;" href="">Editar</button>
-                                </div>
-                            @else
-                                <div
-                                    class="d-flex position-relative justify-content-center align-items-center bg-white rounded-circle overflow-hidden edit-pic">
-                                    <img src="{{ asset('img/supplier/logos/' . Auth::user()->supplier->logo) }}"
-                                        alt="profile" class="w-100 h-auto">
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#updateLogoModal"
-                                        class="position-absolute bottom-0 bg-grey text-white w-100 text-center h-20 pt-1"
-                                        style="opacity: .7; border:none; z-index:5;" href="">Editar</button>
-                                </div>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-            @endif
-
-            @if (Auth::user()->hasRole(['client_master']))
-                <div>
-                    <h5 class="mb-5">Logo de empresa</h5>
-                    <div class="row">
-                        <div class="col-md-12 d-flex align-items-center justify-content-center mb-4">
-
-                            @if (Auth::user()->client->logo == null)
-                                <div
-                                    class="d-flex position-relative justify-content-center align-items-center bg-primary rounded-circle overflow-hidden edit-pic">
-                                    <img src="{{ 'https://www.gravatar.com/avatar/' . md5(strtolower(trim(Auth::user()->email))) . '?d=retro&s=100' }}"
-                                        alt="profile">
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#updateLogoModal2"
-                                        class="position-absolute bottom-0 bg-grey text-white w-100 text-center h-20 pt-1"
-                                        style="opacity: .7; border:none; z-index:5;" href="">Editar</button>
-                                </div>
-                            @else
-                                <div
-                                    class="d-flex position-relative justify-content-center align-items-center bg-white rounded-circle overflow-hidden edit-pic">
-                                    <img src="{{ asset('img/clients/logos/' . Auth::user()->client->logo) }}"
-                                        alt="profile" class="w-100 h-auto">
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#updateLogoModal2"
-                                        class="position-absolute bottom-0 bg-grey text-white w-100 text-center h-20 pt-1"
-                                        style="opacity: .7; border:none; z-index:5;" href="">Editar</button>
-                                </div>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-            @endif
-        </div>
     </div>
-
-
-
 @endsection
 
 @push('plugin-scripts')

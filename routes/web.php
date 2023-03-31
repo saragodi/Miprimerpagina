@@ -37,6 +37,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'can:admin_access']],
     //Campañas
     Route::resource('campaings', CampaingController::class);
 
+    Route::get('/campaing/cambiar-status/{id}', [
+        'uses' => 'CampaingController@status',
+        'as' => 'campaing.status',
+    ]);
+
     //Configuration
     Route::get('/configuration', 'DashboardController@configuration')->name('configuration'); //
 
@@ -46,9 +51,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'can:admin_access']],
         'as' => 'admin.settings',
     ]);
 
-    Route::get('/configuracion/temas', [
-        'uses' => 'DashboardController@settings_look',
-        'as' => 'admin.settings_look',
+    Route::get('/configuracion/seo', [
+        'uses' => 'DashboardController@seo',
+        'as' => 'admin.seos',
     ]);
 
     Route::get('/configuracion/usuarios_y_permisos', [

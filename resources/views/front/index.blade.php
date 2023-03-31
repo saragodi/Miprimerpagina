@@ -72,9 +72,8 @@
                 <div class="statistics">
                     <div data-w-id="2d08cc89-1e03-c998-08b5-559d964993e6" style="opacity:0" class="statistics-wrapper">
                         <div class="tab-img-mobile">
-                            <div class="tab-img"><img src="{{ asset('img/other.jpg') }}" loading="lazy"
-                                    srcset="images/pexels-thisisengineering-3912950-p-1080.jpeg 1080w, images/pexels-thisisengineering-3912950-p-1600.jpeg 1600w, images/pexels-thisisengineering-3912950-p-2000.jpeg 2000w, images/pexels-thisisengineering-3912950.jpg 2500w"
-                                    sizes="100vw" alt="" class="img-stat-scroll"></div>
+                            <div class="tab-img"><img src="{{ asset('img/other.jpg') }}" loading="lazy" sizes="100vw"
+                                    alt="" class="img-stat-scroll"></div>
                         </div>
                         <div data-w-id="547b9507-f1f1-fb04-4b21-32d67c1fcdaa" class="stat-item">
                             <div class="stat-title">
@@ -88,9 +87,8 @@
                                 aspernatur iusto tempora illo quaerat sequi dolorum! </p>
                         </div>
                         <div class="tab-img-mobile">
-                            <div class="tab-img"><img src="images/pexels-thisisengineering-3862638.jpg" loading="lazy"
-                                    srcset="images/pexels-thisisengineering-3862638-p-1080.jpeg 1080w, images/pexels-thisisengineering-3862638-p-1600.jpeg 1600w, images/pexels-thisisengineering-3862638-p-2000.jpeg 2000w, images/pexels-thisisengineering-3862638-p-2600.jpeg 2600w, images/pexels-thisisengineering-3862638-p-3200.jpeg 3200w, images/pexels-thisisengineering-3862638.jpg 3748w"
-                                    sizes="100vw" alt="" class="img-stat-scroll"></div>
+                            <div class="tab-img"><img src="{{ asset('img/other.jpg') }}" loading="lazy" sizes="100vw"
+                                    alt="" class="img-stat-scroll"></div>
                         </div>
                         <div data-w-id="df42ad93-1aad-c4d8-af92-a6255636dcf8" class="stat-item is--filp">
                             <div class="stat-title">
@@ -104,9 +102,8 @@
                                 distinctio maxime est error libero odit quo ut? </p>
                         </div>
                         <div class="tab-img-mobile">
-                            <div class="tab-img"><img src="images/pexels-thisisengineering-3862615.jpeg" loading="lazy"
-                                    srcset="images/pexels-thisisengineering-3862615-p-1080.jpeg 1080w, images/pexels-thisisengineering-3862615-p-1600.jpeg 1600w, images/pexels-thisisengineering-3862615-p-2000.jpeg 2000w, images/pexels-thisisengineering-3862615-p-2600.jpeg 2600w, images/pexels-thisisengineering-3862615-p-3200.jpeg 3200w, images/pexels-thisisengineering-3862615.jpeg 7683w"
-                                    sizes="100vw" alt="" class="img-stat-scroll"></div>
+                            <div class="tab-img"><img src="{{ asset('img/other.jpg') }}" loading="lazy" sizes="100vw"
+                                    alt="" class="img-stat-scroll"></div>
                         </div>
                         <div data-w-id="bc4f1606-5e48-6a63-d2d3-ebf20b530e66" class="stat-item">
                             <div class="stat-title">
@@ -143,8 +140,8 @@
                                         vitae possimus, facere, </h2>
                                 </div>
                                 <!--
-                                                                                                        <a href="#" class="button w-button">LEARN MORE</a>
-                                                                                                        -->
+                                                                                                                                        <a href="#" class="button w-button">LEARN MORE</a>
+                                                                                                                                        -->
                             </div>
                         </div>
                     </div>
@@ -173,8 +170,8 @@
                                     deserunt dolorum error in vero, voluptas asperiores </h2>
                             </div>
                             <!--
-                                                                                                      <a href="#" class="button w-button">LEARN MORE</a>
-                                                                                                      -->
+                                                                                                                                      <a href="#" class="button w-button">LEARN MORE</a>
+                                                                                                                                      -->
                         </div>
                     </div>
                     <div class="cta-gradient">
@@ -293,23 +290,28 @@
         <div class="section gradient-eight">
             <div class="container">
                 <div class="partners">
-                    <div class="partner-logo"><img src="images/placeholder-logo-1.svg" loading="lazy" alt=""
-                            class="logo-partner">
+                    <div class="partner-logo"><img src="{{ asset('img/placeholder-logo-1.svg') }}" loading="lazy"
+                            alt="" class="logo-partner">
                     </div>
                     <div data-w-id="e608750d-598b-667a-b04d-75bd5bd2c9b3" class="partner-logo"><img
-                            src="images/placeholder-logo-2.svg" loading="lazy" alt="" class="logo-partner">
+                            src="{{ asset('img/placeholder-logo-2.svg') }}" loading="lazy" alt=""
+                            class="logo-partner">
                     </div>
                     <div data-w-id="6a7ee9c6-263c-e0ee-7f76-3ad383f01cc3" class="partner-logo"><img
-                            src="images/placeholder-logo-3.svg" loading="lazy" alt="" class="logo-partner">
+                            src="{{ asset('img/placeholder-logo-3.svg') }}" loading="lazy" alt=""
+                            class="logo-partner">
                     </div>
                     <div data-w-id="dd06ef3f-2df6-ce86-7741-c7a06e720358" class="partner-logo"><img
-                            src="images/placeholder-logo-4.svg" loading="lazy" alt="" class="logo-partner">
+                            src="{{ asset('img/placeholder-logo-4.svg') }}" loading="lazy" alt=""
+                            class="logo-partner">
                     </div>
                     <div data-w-id="77c9f99b-677b-e5b3-3683-d93c75ddf986" class="partner-logo"><img
-                            src="images/placeholder-logo-5.svg" loading="lazy" alt="" class="logo-partner">
+                            src="{{ asset('img/placeholder-logo-5.svg') }}" loading="lazy" alt=""
+                            class="logo-partner">
                     </div>
                     <div data-w-id="b752959a-aba9-7e87-2ca4-772388efbf11" class="partner-logo"><img
-                            src="images/placeholder-logo-1.svg" loading="lazy" alt="" class="logo-partner">
+                            src="{{ asset('img/placeholder-logo-1.svg') }}" loading="lazy" alt=""
+                            class="logo-partner">
                     </div>
                 </div>
             </div>

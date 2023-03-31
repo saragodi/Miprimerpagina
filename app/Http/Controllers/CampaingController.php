@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Campaing;
+
+use Session;
 use Illuminate\Http\Request;
 
 class CampaingController extends Controller
@@ -61,8 +63,34 @@ class CampaingController extends Controller
         //
     }
 
-    public function destroy(Campaing $campaing)
+    public function status($id)
     {
-        //
+        // Guardar datos en la base de datos
+        $campaing = Campaing::find($id);
+
+        if ($campaing->status == 1) {
+            $campaing->status = 0;
+        } else {
+            $campaing->status = 1;
+        }
+
+        $campaing->save();
+
+        // Mensaje de session
+        Session::flash('success', 'El banner se ha cambiado de estado.');
+
+        // Enviar a vista
+        return redirect()->back();
+    }
+
+    public function destroy($id)
+    {
+        // Guardar datos en la base de datos
+        $campaing = Campaing::find($id);
+
+        $campaing->delete();
+
+        // Enviar a vista
+        return redirect()->back();
     }
 }

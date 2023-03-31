@@ -28,22 +28,134 @@
     @else
         <div class="row">
             <div class="col-md-12">
-                <div class="card mg-b-10">
+                <div class="card mg-b-10 card-body">
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
                                 <tr>
                                     <th>Imagen</th>
+                                    <th>Nombre</th>
                                     <th>Información</th>
-                                    <th>Prioridad</th>
-                                    <th>Botón</th>
                                     <th>Link</th>
                                     <th>Estatus</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($campaings as $campaing)
+                                    <tr>
+                                        <td style="width: 150px;">
+                                            <img style="width: 100%; height:auto; border-radius:0;"
+                                                src="{{ asset('img/campaings/' . $campaing->image) }}"
+                                                alt="{{ $campaing->name }}">
+                                        </td>
+                                        <td>{{ $campaing->name }}</td>
+                                        <td>{{ $campaing->description }}</td>
+                                        <td>{{ $campaing->link }}</td>
+                                        <td>
 
+                                            @if ($campaing->status == true)
+                                                <div class="dropdown">
+                                                    <button class="btn btn-success " type="button"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                        Publicado
+                                                        <ion-icon class="pb-2 ms-2" name="chevron-down-outline"></ion-icon>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item"
+                                                                href="{{ route('campaing.status', $campaing->id) }}">Borrador</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            @else
+                                                <div class="dropdown">
+                                                    <button class="btn btn-danger " type="button" data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                        Borrador
+                                                        <ion-icon class="pb-2 ms-2" name="chevron-down-outline"></ion-icon>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item"
+                                                                href="{{ route('campaing.status', $campaing->id) }}">Publicar</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <div class="btn-group" role="group" aria-label="Basic example">
+                                                <a href="javascript:void(0)" data-toggle="modal"
+                                                    data-target="#modalEdit{{ $campaing->id }}"
+                                                    class="btn btn-outline-primary btn-sm btn-icon ps-1"
+                                                    data-toggle="tooltip" data-original-title="Editar">
+                                                    <i data-feather="edit" class="icon-lg"></i>
+                                                </a>
+
+
+                                                <form method="post"
+                                                    action="{{ route('campaings.destroy', $campaing->id) }}"
+                                                    style="display: inline-block;">
+                                                    <button type="submit"
+                                                        class="btn btn-outline-danger btn-sm btn-icon ps-1"
+                                                        data-toggle="tooltip" data-original-title="Borrar"
+                                                        style="border-top-left-radius: 0 !important; border-bottom-left-radius: 0 !important;">
+                                                        <i data-feather="trash" class="icon-lg"></i>
+                                                    </button>
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('DELETE') }}
+                                                </form>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <div id="modalEdit{{ $campaing->id }}" class="modal fade">
+                                        <div class="modal-dialog modal-dialog-vertical-center" role="document">
+                                            <div class="modal-content bd-0 tx-14">
+                                                <div class="modal-header">
+                                                    <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold">Editar Campaña
+                                                    </h6>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+
+                                                <form method="PATCH"
+                                                    action="{{ route('campaings.update', $campaing->id) }}"
+                                                    enctype="multipart/form-data">
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('PATCH') }}
+                                                    <div class="modal-body pd-25">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="email">Nombre:</label>
+                                                                    <input type="text" class="form-control"
+                                                                        name="name" value="{{ $campaing->name }}">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label for="email">Link </label>
+                                                                    <input type="text" value="{{ $campaing->link }}"
+                                                                        name="email" class="form-control" required="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-outline-secondary"
+                                                            data-dismiss="modal">Cancelar</button>
+                                                        <button id="submitModal" type="submit"
+                                                            class="btn btn-primary">Guardar Información</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div><!-- modal-dialog -->
+                                    </div>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
