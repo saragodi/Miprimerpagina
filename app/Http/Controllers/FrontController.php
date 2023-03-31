@@ -11,6 +11,7 @@ use App\Models\Project;
 
 use App\Models\Category;
 use App\Models\Applicant;
+use App\Models\Campaing;
 use App\Models\LegalText;
 use Str;
 
@@ -31,8 +32,11 @@ class FrontController extends Controller
 
         $banner = Banner::where('is_active', true)->orderBy('priority', 'asc')->get()->take(1);
 
+        $campaings = Campaing::where('status', true)->get()->take(6);
+
         return view('front.index')
-            ->with('banner', $banner);
+            ->with('banner', $banner)
+            ->with('campaings', $campaings);
     }
 
     public function jobs()

@@ -33,7 +33,6 @@ class BannerController extends Controller
             'text_button' => 'required',
             'link' => 'nullable',
             'image' => 'sometimes|min:10|max:2100',
-            'image_responsive' => 'sometimes|min:10|max:2100'
         ));
 
         // Guardar datos en la base de datos

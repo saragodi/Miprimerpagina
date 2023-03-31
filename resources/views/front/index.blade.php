@@ -56,26 +56,23 @@
         <div class="section">
             <div class="container is--max_width">
                 <div class="img-section">
-                    <div class="img-gradient is--divider"></div><img src="images/other.jpg" loading="lazy"
-                        srcset="images/pexels-thisisengineering-3862615-p-1080.jpeg 1080w, images/pexels-thisisengineering-3862615-p-1600.jpeg 1600w, images/pexels-thisisengineering-3862615-p-2000.jpeg 2000w, images/pexels-thisisengineering-3862615-p-2600.jpeg 2600w, images/pexels-thisisengineering-3862615-p-3200.jpeg 3200w, images/pexels-thisisengineering-3862615.jpeg 7683w"
+                    <div class="img-gradient is--divider"></div><img src="{{ asset('img/other.jpg') }}" loading="lazy"
                         sizes="100vw" alt="" class="img-shape">
                 </div>
                 <div data-w-id="1a39f188-d98c-b925-f367-7c21c6d3db2b" style="opacity:0" class="statistics-hover-tabs">
                     <div class="tabs-images-slider">
-                        <div class="tab-img"><img src="images/other.jpg" loading="lazy" sizes="100vw" alt=""
-                                class="img-stat-scroll"></div>
-                        <div class="tab-img"><img src="images/other.jpg" loading="lazy"
-                                srcset="images/pexels-thisisengineering-3862638-p-1080.jpeg 1080w, images/pexels-thisisengineering-3862638-p-1600.jpeg 1600w, images/pexels-thisisengineering-3862638-p-2000.jpeg 2000w, images/pexels-thisisengineering-3862638-p-2600.jpeg 2600w, images/pexels-thisisengineering-3862638-p-3200.jpeg 3200w, images/pexels-thisisengineering-3862638.jpg 3748w"
-                                sizes="100vw" alt="" class="img-stat-scroll"></div>
-                        <div class="tab-img"><img src="images/other.jpg" loading="lazy"
-                                srcset="images/pexels-thisisengineering-3862615-p-1080.jpeg 1080w, images/pexels-thisisengineering-3862615-p-1600.jpeg 1600w, images/pexels-thisisengineering-3862615-p-2000.jpeg 2000w, images/pexels-thisisengineering-3862615-p-2600.jpeg 2600w, images/pexels-thisisengineering-3862615-p-3200.jpeg 3200w, images/pexels-thisisengineering-3862615.jpeg 7683w"
-                                sizes="100vw" alt="" class="img-stat-scroll"></div>
+                        <div class="tab-img"><img src="{{ asset('img/other.jpg') }}" loading="lazy" sizes="100vw"
+                                alt="" class="img-stat-scroll"></div>
+                        <div class="tab-img"><img src="{{ asset('img/other.jpg') }}" loading="lazy" sizes="100vw"
+                                alt="" class="img-stat-scroll"></div>
+                        <div class="tab-img"><img src="{{ asset('img/other.jpg') }}" loading="lazy" sizes="100vw"
+                                alt="" class="img-stat-scroll"></div>
                     </div>
                 </div>
                 <div class="statistics">
                     <div data-w-id="2d08cc89-1e03-c998-08b5-559d964993e6" style="opacity:0" class="statistics-wrapper">
                         <div class="tab-img-mobile">
-                            <div class="tab-img"><img src="images/other.jpg" loading="lazy"
+                            <div class="tab-img"><img src="{{ asset('img/other.jpg') }}" loading="lazy"
                                     srcset="images/pexels-thisisengineering-3912950-p-1080.jpeg 1080w, images/pexels-thisisengineering-3912950-p-1600.jpeg 1600w, images/pexels-thisisengineering-3912950-p-2000.jpeg 2000w, images/pexels-thisisengineering-3912950.jpg 2500w"
                                     sizes="100vw" alt="" class="img-stat-scroll"></div>
                         </div>
@@ -146,8 +143,8 @@
                                         vitae possimus, facere, </h2>
                                 </div>
                                 <!--
-                                                                                    <a href="#" class="button w-button">LEARN MORE</a>
-                                                                                    -->
+                                                                                                        <a href="#" class="button w-button">LEARN MORE</a>
+                                                                                                        -->
                             </div>
                         </div>
                     </div>
@@ -157,7 +154,11 @@
                 </div>
             </div>
         </div>
-        @include('front.layouts.partials._promo_banner')
+        @if ($campaings->count() != 0)
+            @include('front.layouts.partials._promo_banner')
+        @else
+            <div class="my-5"></div>
+        @endif
         <div class="section">
             <div class="container is--max_width">
                 <div class="cta-wrapper">
@@ -172,8 +173,8 @@
                                     deserunt dolorum error in vero, voluptas asperiores </h2>
                             </div>
                             <!--
-                                                                                  <a href="#" class="button w-button">LEARN MORE</a>
-                                                                                  -->
+                                                                                                      <a href="#" class="button w-button">LEARN MORE</a>
+                                                                                                      -->
                         </div>
                     </div>
                     <div class="cta-gradient">

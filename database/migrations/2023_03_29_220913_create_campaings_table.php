@@ -22,6 +22,8 @@ class CreateCampaingsTable extends Migration
             $table->string('link')->nullable();
             $table->string('image')->nullable();
 
+            $table->boolean('status')->nullable()->default(false);
+
             $table->timestamps();
         });
     }
