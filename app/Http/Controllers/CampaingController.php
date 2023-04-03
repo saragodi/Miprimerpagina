@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Campaing;
 
+use Auth;
+use Image;
 use Session;
+use Purifier;
+
 use Illuminate\Http\Request;
 
 class CampaingController extends Controller

@@ -173,10 +173,10 @@ class BannerController extends Controller
         return redirect()->route('banners.show', $banner->id);
     }
 
-    public function status(Request $request)
+    public function status($id)
     {
         // Guardar datos en la base de datos
-        $banner = Banner::find($request->id);
+        $banner = Banner::find($id);
 
         if ($banner->is_active == true) {
             $banner->is_active = false;

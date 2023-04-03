@@ -90,41 +90,29 @@
 @endsection
 
 @section('content')
-    <div class="row mb-4">
-        <div class="col-md-6 text-left">
-            <a href="{{ route('banners.index') }}" class="btn btn-info mr-2"><i class="simple-icon-arrow-left"
-                    aria-hidden="true"></i> Regresar</a>
-        </div>
-
-        <div class="col-md-6 text-right">
-            <a href="{{ route('banners.edit', $banner->id) }}" class="btn btn-primary mr-2"><i
-                    class="simple-icon-pencil"></i> Editar</a>
-
-            <form method="POST" action="{{ route('banners.destroy', $banner->id) }}" style="display: inline-block;">
-                <button type="submit" class="btn btn-outline-danger" data-toggle="tooltip" data-original-title="Borrar">
-                    <i class="simple-icon-trash"></i> Eliminar
-                </button>
-                {{ csrf_field() }}
-                {{ method_field('DELETE') }}
-            </form>
-        </div>
-    </div>
-
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-6">
             <div class="row">
                 <div class="col-md-12">
                     <div class="card mb-4">
                         <div class="card-body">
-                            <h4 class="mb-0">
-                                Información del Banner
 
-                                @if ($banner->is_active == true)
-                                    <span class="badge badge-success">Activo</span>
-                                @else
-                                    <span class="badge badge-danger">Desactivado</span>
-                                @endif
-                            </h4>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h4 class="mb-0">
+                                    Información del Banner
+
+                                    @if ($banner->is_active == true)
+                                        <span class="badge badge-success">Activo</span>
+                                    @else
+                                        <span class="badge badge-danger">Desactivado</span>
+                                    @endif
+                                </h4>
+
+                                <a href="{{ route('banners.index') }}" class="btn btn-info mr-2"><i
+                                        class="simple-icon-arrow-left" aria-hidden="true"></i> Regresar</a>
+                            </div>
+
+
                             <hr>
 
                             <div class="row mt-5">
@@ -163,24 +151,30 @@
         </div>
 
         <!-- Preview -->
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
-                    <h4>Vista Previa</h4>
-                    <hr>
-                    <div class="d-flex">
-                        <div class="card-banner d-flex position-relative justify-content-center align-items-center"
-                            id="hex_" style="background: {{ $banner->hex }}">
-                            <div class="card-banner-content">
-                                <h5 id="title_">{{ $banner->title }}</h5>
-                                <p id="subtitle_">{{ $banner->subtitle }}</p>
-                                <a href="#" class="btn btn-light rounded"
-                                    id="text_button_">{{ $banner->text_button }}</a>
-                            </div>
-                            <img src="{{ asset('img/banners/' . $banner->image_desktop) }}" id="output"
-                                class="card-banner-image" width="100">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4>Vista Previa</h4>
+                        <div class="d-flex">
+                            <a href="{{ route('banners.edit', $banner->id) }}" class="btn btn-primary mr-2"><i
+                                    class="simple-icon-pencil"></i> Editar</a>
+
+                            <form method="POST" action="{{ route('banners.destroy', $banner->id) }}"
+                                style="display: inline-block;">
+                                <button type="submit" class="btn btn-outline-danger" data-toggle="tooltip"
+                                    data-original-title="Borrar">
+                                    <i class="simple-icon-trash"></i> Eliminar
+                                </button>
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                            </form>
                         </div>
                     </div>
+
+                    <hr>
+
+                    <iframe class="w-100" style="height:500px" src="{{ route('index') }}" title="description"></iframe>
                 </div>
             </div>
         </div>

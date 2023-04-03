@@ -4,9 +4,8 @@
             <div class="footer-logo"><img src="{{ asset('img/logo/derch-w.png') }}" loading="lazy" width="75"
                     alt="" class="logo is--footer"></div>
             <div class="footer-links">
-                <a href="#" class="nav-link">Section</a>
-                <a href="#" class="nav-link">Section</a>
-                <a href="#" class="nav-link">Section</a>
+                <a href="{{ route('index') }}" class="nav-link">Inicio</a>
+                <a href="{{ route('jobs.all') }}" class="nav-link">Vacantes</a>
             </div>
         </div>
         <div class="footer-row">
@@ -29,5 +28,11 @@
             </div>
         </div>
     </div>
-    <div class="text-block">©Copyright 2023 All rights reserved</div>
+    <div class="text-block">©Copyright <span id="year"></span> Todos los derechos reservados</div>
 </div>
+
+@push('scripts')
+    <script>
+        document.getElementById("year").innerHTML = new Date().getFullYear();
+    </script>
+@endpush

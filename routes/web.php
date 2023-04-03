@@ -19,7 +19,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'can:admin_access']],
 
     Route::get('/banners/status/{id}', [
         'uses' => 'BannerController@status',
-        'as' => 'banners.status',
+        'as' => 'banner.status',
     ]);
 
     //Vacantes
@@ -137,7 +137,7 @@ Route::get('/', [
 
 Route::get('/vacantes', [
     'uses' => 'FrontController@jobs',
-    'as' => 'jobs',
+    'as' => 'jobs.all',
 ]);
 
 Route::get('/vacantes/{slug}', [

@@ -18,7 +18,7 @@
                     <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur exercitationem aliquam
                         obcaecati
                         eligendi, similique qui reprehenderit illo, </span></h2>
-                    <a href="{{ route('jobs') }}" class="mt-2 button w-button">Ver todas</a>
+                    <a href="{{ route('jobs.all') }}" class="mt-2 button w-button">Ver todas</a>
                 </div>
             </div>
             <div class="sticky-items">

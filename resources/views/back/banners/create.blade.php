@@ -25,30 +25,13 @@
                         <hr>
                         <input type="hidden" name="is_promotional" value="0">
                         <div class="row">
-                            <div class="form-group col-md-8">
+                            <div class="form-group col-md-6">
                                 <label for="title">Título <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="title" name="title"
                                     value="{{ old('title') }}" required="" />
                             </div>
 
-                            <div class="form-group col-md-4">
-                                <label for="link">Prioridad
-                                    <span data-toggle="tooltip" data-placement="top"
-                                        title="Se refiere al posicionamiento que tendrá este elemento en la página web. Prioridad 1 se muestra siempre primero y prioridad 7 siempre al último. Si existen dos elementos con prioridades iguales tomará prevalencia el elemento creado más recientemente."><i
-                                            class="fas fa-info-circle"></i></span>
-                                </label>
-                                <select class="form-control" name="priority" required>
-                                    <option value="1" selected>1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group col-md-8">
+                            <div class="form-group col-md-6">
                                 <label for="subtitle">Subtítulo <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="subtitle" name="subtitle"
                                     value="{{ old('subtitle') }}" required="" />
@@ -90,22 +73,6 @@
 
                             </div>
                         </div>
-
-
-                        {{-- 
-                    <h4>Vista Previa</h4>
-                    <hr>
-                    <div class="d-flex">
-                        <div class="card-banner d-flex justify-content-center align-items-center" id="hex_">
-                            <div class="card-banner-content">
-                                <h5 id="title_">Título</h5>
-                                <p id="subtitle_">Subtítulo</p>
-                                <a href="#" class="btn btn-light rounded" id="text_button_">Texto del botón</a>
-                            </div>
-                            <img class="card-banner-image" id="output"/>
-                        </div>
-                    </div>
-                    --}}
                     </div>
                 </div>
 
