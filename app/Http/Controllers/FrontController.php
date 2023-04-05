@@ -124,20 +124,25 @@ class FrontController extends Controller
             });
 
 
-            $banner = Banner::where('is_active', true)->orderBy('priority', 'asc')->get()->take(1);
+            $banner = Banner::where('is_active', true)->orderBy('updated_at', 'asc')->get()->take(1);
+
+            $campaings = Campaing::where('status', true)->get()->take(6);
 
             return view('front.index')
-                ->with('banner', $banner);
+                ->with('banner', $banner)
+                ->with('campaings', $campaings);
         } catch (Exception $e) {
 
             Session::flash('error', 'No se ha identificado servidor SMTP en la plataforma. Configuralo correctamente para enviar correos desde tu sistema.');
             return response()->json(['mensaje' => 'No se ha identificado servidor SMTP en la plataforma. Configuralo correctamente para enviar correos desde tu sistema.'], 200);
 
-            $banner = Banner::where('is_active', true)->orderBy('priority', 'asc')->get()->take(1);
+            $banner = Banner::where('is_active', true)->orderBy('updated_at', 'asc')->get()->take(1);
 
+            $campaings = Campaing::where('status', true)->get()->take(6);
 
             return view('front.index')
-                ->with('banner', $banner);
+                ->with('banner', $banner)
+                ->with('campaings', $campaings);
         }
     }
 
