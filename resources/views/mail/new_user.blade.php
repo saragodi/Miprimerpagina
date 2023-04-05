@@ -44,7 +44,7 @@
                 <tr>
                     <td>
                         <h1 style="margin-bottom:0px; text-transform: uppercase;">Se acaba de postular
-                            {{ $name }} {{ $lastnames }}, para la vacante de {{ $job }}</h1>
+                            {{ $name }} {{ $lastname }}, para la vacante de {{ $job }}</h1>
 
                         <ul>
                             <li>Correo: {{ $email }}</li>
