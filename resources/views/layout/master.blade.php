@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>MEST Panel Administrativo</title>
+    <title>DERCH Panel Administrativo</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,22 +10,21 @@
     <!-- CSRF Token -->
     <meta name="_token" content="{{ csrf_token() }}">
 
+    <!--Favicon-->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#373a36">
-    <meta name="msapplication-TileColor" content="#373a36">
-    <meta name="theme-color" content="#373a36">
-    <meta property="og:title" content="MEST Energy">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4ab2cf">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="Derch">
     <meta property="og:image:height" content="266">
     <meta property="og:type" content="website">
     <meta property="og:image:width" content="508">
-    <meta property="og:description"
-        content="El ahorro comienza en conocer cómo y cuándo utilizas tu energía. En MEST te proporcionamos información, análisis y consultoría integral.">
-    <meta property="og:url" content="https://www.mestenergy.com.mx/">
-    <meta property="og:image" content="https://www.mestenergy.com.mx/img/logo-white.svg">
-    <link rel="canonical" href="https://www.mestenergy.com.mx/">
+    <meta property="og:url" content="https://www.derch.com.mx/">
+    <meta property="og:image" content="https://www.derch.com.mx/img/logo/derch-w.png">
+    <link rel="canonical" href="https://www.derch.com.mx/">
 
     <!-- plugin css -->
     <link href="{{ asset('assets/fonts/feather-font/css/iconfont.css') }}" rel="stylesheet" />

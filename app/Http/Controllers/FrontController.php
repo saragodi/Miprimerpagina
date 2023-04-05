@@ -30,7 +30,7 @@ class FrontController extends Controller
     {
         $today = Carbon::now()->format('Y-m-d');
 
-        $banner = Banner::where('is_active', true)->orderBy('priority', 'asc')->get()->take(1);
+        $banner = Banner::where('is_active', true)->orderBy('updated_at', 'asc')->get()->take(1);
 
         $campaings = Campaing::where('status', true)->get()->take(6);
 

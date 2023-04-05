@@ -18,38 +18,79 @@
         <div class="section no-scroll">
             <div class="container is--max_width">
                 <div class="hero">
-                    <div class="hero-intro">
-                        <div data-w-id="49beb054-8ac3-0a15-8c1c-26ce33c6d0ff"
-                            style="-webkit-transform:translate3d(-200%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-200%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-200%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-200%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-                            class="hero-intro_wrapper">
-                            <div class="section-label_small">
-                                <div class="small-text">Section</div>
-                            </div>
-                            <div class="section-heading">
-                                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h1>
-                            </div>
-                            <div class="section_cta">
-                                <a href="#" class="button w-button">Nuestro trabajo</a>
-                                <a href="#" class="button is--ghost w-button">Conoce más</a>
+
+                    @if ($banner->count() == 0)
+                        <div class="hero-intro">
+                            <div data-w-id="49beb054-8ac3-0a15-8c1c-26ce33c6d0ff"
+                                style="-webkit-transform:translate3d(-200%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-200%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-200%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-200%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+                                class="hero-intro_wrapper">
+                                <div class="section-label_small">
+                                    <div class="small-text">Section</div>
+                                </div>
+                                <div class="section-heading">
+                                    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h1>
+                                </div>
+                                <div class="section_cta">
+                                    <a href="#" class="button w-button">Nuestro trabajo</a>
+                                    <a href="#" class="button is--ghost w-button">Conoce más</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="hero-gradient_bg">
-                        <div data-w-id="49beb054-8ac3-0a15-8c1c-26ce33c6d110"
-                            style="-webkit-transform:translate3d(100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
-                            class="hero-gradient-col is--left is--img">
-                            <div class="img-gradient"></div>
-                            <div class="hero-slideshow"><img src="{{ asset('front/images/banner.jpg') }}" loading="lazy"
-                                    sizes="(max-width: 991px) 100vw, 80vw" alt="" class="img-slide-hero"></div>
+                        <div class="hero-gradient_bg">
+                            <div data-w-id="49beb054-8ac3-0a15-8c1c-26ce33c6d110"
+                                style="-webkit-transform:translate3d(100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
+                                class="hero-gradient-col is--left is--img">
+                                <div class="img-gradient"></div>
+                                <div class="hero-slideshow"><img src="{{ asset('front/images/banner.jpg') }}" loading="lazy"
+                                        sizes="(max-width: 991px) 100vw, 80vw" alt="" class="img-slide-hero"></div>
+                            </div>
+                            <div data-w-id="49beb054-8ac3-0a15-8c1c-26ce33c6d113"
+                                style="opacity:0;-webkit-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+                                class="hero-gradient-col is--two">
+                                <div class="gradient-row"></div>
+                                <div data-w-id="49beb054-8ac3-0a15-8c1c-26ce33c6d115" style="opacity:0"
+                                    class="gradient-row is--overlap is--straight"></div>
+                            </div>
                         </div>
-                        <div data-w-id="49beb054-8ac3-0a15-8c1c-26ce33c6d113"
-                            style="opacity:0;-webkit-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-                            class="hero-gradient-col is--two">
-                            <div class="gradient-row"></div>
-                            <div data-w-id="49beb054-8ac3-0a15-8c1c-26ce33c6d115" style="opacity:0"
-                                class="gradient-row is--overlap is--straight"></div>
-                        </div>
-                    </div>
+                    @else
+                        @foreach ($banner as $ban)
+                            <div class="hero-intro">
+                                <div data-w-id="49beb054-8ac3-0a15-8c1c-26ce33c6d0ff"
+                                    style="-webkit-transform:translate3d(-200%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-200%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-200%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-200%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+                                    class="hero-intro_wrapper">
+                                    <div class="section-label_small">
+                                        <div class="small-text">{{ $ban->title }}</div>
+                                    </div>
+                                    <div class="section-heading">
+                                        <h1>{{ $ban->subtitle }}</h1>
+                                    </div>
+                                    <div class="section_cta">
+                                        <a href="{{ $ban->link }}" class="button w-button">{{ $ban->text_button }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hero-gradient_bg">
+                                <div data-w-id="49beb054-8ac3-0a15-8c1c-26ce33c6d110"
+                                    style="-webkit-transform:translate3d(100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
+                                    class="hero-gradient-col is--left is--img">
+                                    <div class="img-gradient"></div>
+                                    <div class="hero-slideshow"><img src="{{ asset('img/banners/' . $ban->image_desktop) }}"
+                                            loading="lazy" sizes="(max-width: 991px) 100vw, 80vw" alt=""
+                                            class="img-slide-hero">
+                                    </div>
+                                </div>
+                                <div data-w-id="49beb054-8ac3-0a15-8c1c-26ce33c6d113"
+                                    style="opacity:0;-webkit-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+                                    class="hero-gradient-col is--two">
+                                    <div class="gradient-row"></div>
+                                    <div data-w-id="49beb054-8ac3-0a15-8c1c-26ce33c6d115" style="opacity:0"
+                                        class="gradient-row is--overlap is--straight"></div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
+
+
                 </div>
             </div>
         </div>
@@ -140,8 +181,8 @@
                                         vitae possimus, facere, </h2>
                                 </div>
                                 <!--
-                                                                                                                                        <a href="#" class="button w-button">LEARN MORE</a>
-                                                                                                                                        -->
+                                                                                                                                                                                                    <a href="#" class="button w-button">LEARN MORE</a>
+                                                                                                                                                                                                    -->
                             </div>
                         </div>
                     </div>
@@ -170,8 +211,8 @@
                                     deserunt dolorum error in vero, voluptas asperiores </h2>
                             </div>
                             <!--
-                                                                                                                                      <a href="#" class="button w-button">LEARN MORE</a>
-                                                                                                                                      -->
+                                                                                                                                                                                                  <a href="#" class="button w-button">LEARN MORE</a>
+                                                                                                                                                                                                  -->
                         </div>
                     </div>
                     <div class="cta-gradient">
