@@ -58,6 +58,10 @@ class FrontController extends Controller
     public function applyTo(Request $request, $id)
     {
 
+        $request->validate([
+            'file' => 'required|file|max:2000|mimes:pdf',
+        ]);
+
         $applicant = new Applicant;
 
         $applicant->job_id = $id;
@@ -109,7 +113,7 @@ class FrontController extends Controller
                 $message->from('postulaciones.derch@gmail.com', 'Derch');
             });
 
-            Mail::send('mail.new_user', $data, function ($message) use ($files) {
+            Mail::send('mail.new_user', $data, function ($message) use ($files, $data) {
                 $message->to('miriam.derch@gmail.com', 'Derch')->subject('Hey! Se han postulado para una vacante');
 
                 $message->from('postulaciones.derch@gmail.com', 'Derch');
