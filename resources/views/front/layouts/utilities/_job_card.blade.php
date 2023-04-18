@@ -2,8 +2,7 @@
     <div data-w-id="e1e471e2-a01c-0ac3-4fd6-e4bb59c33948" style="opacity:0" class="item-wrapper">
         <div class="small-text is--gray">{{ $job->created_at }}</div>
         <div class="icon-articles">
-            <div class="g-shape"></div>
-            <div class="g-shape is--filp"></div>
+            <i class="link-icon mb-3" style="height:100px; width:100px" data-feather="{{ $job->icon }}"></i>
         </div>
         <h3>{{ $job->name }}</h3>
         <div class="w-dyn-list">

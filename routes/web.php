@@ -140,7 +140,7 @@ Route::get('/vacantes', [
     'as' => 'jobs.all',
 ]);
 
-Route::get('/vacantes/{slug}', [
+Route::get('/vacante/{slug}', [
     'uses' => 'FrontController@job',
     'as' => 'job.detail'
 ])->where('slug', '[\w\d\-\_]+');

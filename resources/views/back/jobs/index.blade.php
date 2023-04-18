@@ -137,6 +137,33 @@
                                                 <i class="link-icon" data-feather="edit"></i>
                                             </a>
 
+                                            <button href="#" id="button_{{ $job->id }}"
+                                                class="btn btn-link text-dark px-1 py-0 clip" data-toggle="tooltip"
+                                                data-url="{{ route('job.detail', $job->slug) }}"
+                                                data-original-title="Copiar Link">
+
+                                                <i class="link-icon" data-feather="clipboard"></i>
+                                            </button>
+
+                                            <p id="copiao"></p>
+
+                                            @push('custom-scripts')
+                                                <script>
+                                                    var $temp = $("<input>");
+                                                    var $url = $('#button_{{ $job->id }}').attr('data-url');
+
+                                                    $('#button_{{ $job->id }}').on('click', function() {
+                                                        $("body").append($temp);
+                                                        $temp.val($url).select();
+                                                        document.execCommand("copy");
+                                                        $temp.remove();
+
+                                                        $("#copiao").text("URL copied!");
+                                                    })
+                                                </script>
+                                            @endpush
+
+
                                             {{-- 
                                             <form method="POST" action="{{ route('jobs.status', $job->id) }}">
                                                 {{ csrf_field() }}
@@ -173,3 +200,6 @@
         </div>
     @endif
 @endsection
+
+@push('custom-scripts')
+@endpush
