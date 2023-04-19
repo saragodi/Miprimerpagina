@@ -158,7 +158,9 @@
                                                         document.execCommand("copy");
                                                         $temp.remove();
 
-                                                        $("#copiao").text("URL copied!");
+                                                        $("#copiao").text("Link copiado!").delay(800).fadeOut(400);
+
+
                                                     })
                                                 </script>
                                             @endpush

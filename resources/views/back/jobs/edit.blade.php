@@ -38,7 +38,8 @@
 
                     <form action="{{ route('jobs.update', $job->id) }}" method="POST">
 
-                        @csrf
+                        {{ csrf_field() }}
+                        {{ method_field('PUT') }}
 
                         <div class="row">
                             <div class="col-md-4">
@@ -119,6 +120,16 @@
                                         <option value="Director">Director</option>
                                         <option value="Ejecutivo">Ejecutivo</option>
                                     </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label">Icono <small class="ms-2"><a
+                                                href="https://feathericons.com/" target=”_blank”>Ver
+                                                Iconos</a></small></label>
+                                    <input type="text" name="icon" value="{{ $job->icon }}"
+                                        class="form-control">
                                 </div>
                             </div>
 

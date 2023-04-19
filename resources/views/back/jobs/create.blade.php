@@ -103,6 +103,14 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label">Icono <small class="ms-2"><a
+                                                href="https://feathericons.com/" target=”_blank”>Ver
+                                                Iconos</a></small></label>
+                                    <input type="text" name="icon" class="form-control">
+                                </div>
+                            </div>
 
                             <div class="col-md-12 mt-3">
                                 <h3>Descripción <span style="color: red">*</span></h3>

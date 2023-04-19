@@ -48,6 +48,8 @@ class JobController extends Controller
         $job->location = $request->location;
         $job->state = $request->state;
 
+        $job->icon = $request->icon;
+
         $job->status = 1;
 
         $job->type = $request->type;
@@ -99,6 +101,23 @@ class JobController extends Controller
     public function update(Request $request, $id)
     {
         $job = Job::find($id);
+
+        $job->name = $request->name;
+        $job->company = $request->company;
+        $job->location = $request->location;
+        $job->state = $request->state;
+
+        $job->icon = $request->icon;
+
+        $job->type = $request->type;
+        $job->experience = $request->experience;
+        $job->modality = $request->modality;
+
+        $job->about = $request->about;
+
+        $job->save();
+
+        return redirect()->route('jobs.show', $job->id);
     }
 
     public function status($id)
