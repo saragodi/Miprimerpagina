@@ -453,9 +453,9 @@ p {
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
+  -webkit-justify-content: flex-start;
   -ms-flex-pack: justify;
-  justify-content: space-between;
+  justify-content: flex-start;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 184, 172, 0.39)), color-stop(66%, transparent));
   background-image: linear-gradient(180deg, rgba(0, 184, 172, 0.39), transparent 66%);
   -webkit-transition: all 200ms ease;
