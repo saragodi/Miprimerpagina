@@ -92,26 +92,26 @@
             </div>
         </div>
     </div>
-    <div class="section">
+    <div class="section" id="us">
         <div class="container is--max_width">
             <div class="img-section">
-                <div class="img-gradient is--divider"></div><img src="{{ asset('img/other.jpg') }}" loading="lazy"
+                <div class="img-gradient is--divider"></div><img src="{{ asset('img/ex.jpg') }}" loading="lazy"
                     sizes="100vw" alt="" class="img-shape">
             </div>
             <div data-w-id="1a39f188-d98c-b925-f367-7c21c6d3db2b" style="opacity:0" class="statistics-hover-tabs">
                 <div class="tabs-images-slider">
-                    <div class="tab-img"><img src="{{ asset('img/other.jpg') }}" loading="lazy" sizes="100vw"
+                    <div class="tab-img"><img src="{{ asset('img/ex.jpg') }}" loading="lazy" sizes="100vw" alt=""
+                            class="img-stat-scroll"></div>
+                    <div class="tab-img"><img src="{{ asset('img/colab.jpg') }}" loading="lazy" sizes="100vw"
                             alt="" class="img-stat-scroll"></div>
-                    <div class="tab-img"><img src="{{ asset('img/other.jpg') }}" loading="lazy" sizes="100vw"
-                            alt="" class="img-stat-scroll"></div>
-                    <div class="tab-img"><img src="{{ asset('img/other.jpg') }}" loading="lazy" sizes="100vw"
+                    <div class="tab-img"><img src="{{ asset('img/people.jpg') }}" loading="lazy" sizes="100vw"
                             alt="" class="img-stat-scroll"></div>
                 </div>
             </div>
             <div class="statistics">
                 <div data-w-id="2d08cc89-1e03-c998-08b5-559d964993e6" style="opacity:0" class="statistics-wrapper">
                     <div class="tab-img-mobile">
-                        <div class="tab-img"><img src="{{ asset('img/other.jpg') }}" loading="lazy" sizes="100vw"
+                        <div class="tab-img"><img src="{{ asset('img/ex.jpg') }}" loading="lazy" sizes="100vw"
                                 alt="" class="img-stat-scroll"></div>
                     </div>
                     <div data-w-id="547b9507-f1f1-fb04-4b21-32d67c1fcdaa" class="stat-item">
@@ -126,7 +126,7 @@
                             objetivos.</p>
                     </div>
                     <div class="tab-img-mobile">
-                        <div class="tab-img"><img src="{{ asset('img/other.jpg') }}" loading="lazy" sizes="100vw"
+                        <div class="tab-img"><img src="{{ asset('img/colab.jpg') }}" loading="lazy" sizes="100vw"
                                 alt="" class="img-stat-scroll"></div>
                     </div>
                     <div data-w-id="df42ad93-1aad-c4d8-af92-a6255636dcf8" class="stat-item is--filp">
@@ -140,7 +140,7 @@
                             éxito en gestión Comercial y de RH.</p>
                     </div>
                     <div class="tab-img-mobile">
-                        <div class="tab-img"><img src="{{ asset('img/other.jpg') }}" loading="lazy" sizes="100vw"
+                        <div class="tab-img"><img src="{{ asset('img/people.jpg') }}" loading="lazy" sizes="100vw"
                                 alt="" class="img-stat-scroll"></div>
                     </div>
                     <div data-w-id="bc4f1606-5e48-6a63-d2d3-ebf20b530e66" class="stat-item">
@@ -179,8 +179,8 @@
                                     Operaciones, Administración, Gestión Comercial y de RRHH.</h2>
                             </div>
                             <!--
-                                                                                                                                                                                                                                                                            <a href="#" class="button w-button">LEARN MORE</a>
-                                                                                                                                                                                                                                                                            -->
+                                                                                                                                                                                                                                                                                                                                                <a href="#" class="button w-button">LEARN MORE</a>
+                                                                                                                                                                                                                                                                                                                                                -->
                         </div>
                     </div>
                 </div>
@@ -217,7 +217,7 @@
             </div>
         </div>
     </div>
-    <div data-w-id="7d3dded1-e6be-537b-4cdf-9d6ba6f9acff" class="section-sticky">
+    <div data-w-id="7d3dded1-e6be-537b-4cdf-9d6ba6f9acff" class="section-sticky" id="areas">
         <div class="wrapper-tech">
             <div class="container-sticky">
                 <div class="sticky-content">
@@ -238,12 +238,14 @@
                         </div>
                         <div class="item-content">
                             <div class="section-label_small">
-                                <div class="small-text">Area</div>
+                                <div class="small-text">Reclutamiento y Selección</div>
                             </div>
                             <div class="item-title">
-                                <h3 class="heading">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quae
-                                    pariatur, quas
-                                    repudiandae voluptatum facere qui ipsum a nam enim maxime voluptas </h3>
+                                <h3 class="heading">Análisis.<br>
+                                    Busqueda Estratégica. <br>
+                                    Herramientas. <br>
+                                    Proyectos Especiales. <br>
+                                </h3>
                             </div>
                             <a href="#" class="button w-button">Conoce mas</a>
                         </div>
@@ -265,10 +267,12 @@
                         </div>
                         <div class="item-content">
                             <div class="section-label_small">
-                                <div class="small-text">Area</div>
+                                <div class="small-text">Consultorías, Análisis y Diagnóstico</div>
                             </div>
                             <div class="item-title">
-                                <h3 class="heading">Lorem ipsum dolor sit amet consectetur, </h3>
+                                <h3 class="heading">A través de este proceso ayudamos a las organizaciones a comprender su
+                                    desempeño, buscar áreas problemáticas, identificar oportunidades y desarrollar un plan
+                                    de acción para mejorar el desempeño y productividad.</h3>
                             </div>
                             <a href="#" class="button w-button">conoce mas</a>
                         </div>
@@ -290,10 +294,15 @@
                         </div>
                         <div class="item-content">
                             <div class="section-label_small">
-                                <div class="small-text">area</div>
+                                <div class="small-text">Capacitación</div>
                             </div>
                             <div class="item-title">
-                                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                                <h3>
+                                    Capacitación Regulatoria <br>
+                                    Capacitación Normativa <br>
+                                    Capacitación Especializada <br>
+                                    NOM 035 <br>
+                                </h3>
                             </div>
                             <a href="#" class="button w-button">conoce mas</a>
                         </div>
@@ -357,31 +366,32 @@
         <div class="container is--max_width top-gradient">
             <div class="header-section">
                 <div class="section-title">
-                    <h1 class="teal">Generamos soluciones EFECTIVAS para tu Empresa</h1>
+                    <h1 class="teal">Te acompañamos en Procesos de Eficiencia, Salida Voluntaria o Involuntaria y
+                        Separaciones de personal por Pensión o Jubilación</h1>
                 </div>
             </div>
             <div data-w-id="bc7de3ed-4cbb-8f02-07d2-77887cbca156" class="footer-nav">
                 <div class="footer-nav-items">
                     <a href="#" class="f-nav-item is--empty w-inline-block"></a>
                     <a href="#" class="f-nav-item w-inline-block">
-                        <div class="link-footer-text">Valores</div>
+                        <div class="link-footer-text">Pasión</div>
                     </a>
                     <a id="w-node-bc7de3ed-4cbb-8f02-07d2-77887cbca15b-2d6ff0f7" href="#"
                         class="f-nav-item is--filp gradient w-inline-block">
-                        <div class="link-footer-text">Areas </div>
+                        <div class="link-footer-text">Integridad</div>
                     </a>
                     <a href="#" class="f-nav-item w-inline-block">
-                        <div class="link-footer-text">Valores</div>
+                        <div class="link-footer-text">Actitud de Servicio</div>
                     </a>
                     <a id="w-node-bc7de3ed-4cbb-8f02-07d2-77887cbca161-2d6ff0f7" href="#"
                         class="f-nav-item is--filp gradient w-inline-block">
-                        <div class="link-footer-text">Areas</div>
+                        <div class="link-footer-text">Resolución</div>
                     </a>
                     <a href="#" class="f-nav-item w-inline-block">
-                        <div class="link-footer-text">Valores</div>
+                        <div class="link-footer-text">Calidez</div>
                     </a>
                     <a href="#" class="f-nav-item is--filp gradient w-inline-block">
-                        <div class="link-footer-text">Areas</div>
+                        <div class="link-footer-text">Pasión</div>
                     </a>
                     <a href="#" class="f-nav-item is--empty w-inline-block"></a>
                     <a href="#" class="f-nav-item is--empty w-inline-block"></a>

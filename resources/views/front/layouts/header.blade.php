@@ -13,9 +13,9 @@
     </div>
     <div class="nav-links">
         <a href="{{ route('index') }}" class="nav-link">Inicio</a>
-        <a href="#" class="nav-link">Nosotros</a>
+        <a href="{{ route('index') }}/#us" class="nav-link">Nosotros</a>
         <a href="{{ route('index') }}/#vacantes" class="nav-link">Vacantes</a>
-        <a href="#" class="nav-link">Empresas</a>
+        <a href="{{ route('index') }}/#areas" class="nav-link">Empresas</a>
         <a href="#" class="nav-button w-button">Contacto</a>
     </div>
 </nav>
