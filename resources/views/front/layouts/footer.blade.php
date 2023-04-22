@@ -9,26 +9,39 @@
             </div>
         </div>
         <div class="footer-row">
-            <div class="footer-links">
-                <div class="w-form">
-                    <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form">
-                        <label for="email-2" class="field-label">Contactanos</label>
-                        <div class="form-input"><input type="email" class="text-field w-input" maxlength="256"
-                                name="email-2" data-name="Email 2" placeholder="Email" id="email-2"
-                                required=""><input type="submit" value="Enviar" data-wait="Please wait..."
-                                class="button is--solid w-button"></div>
-                    </form>
-                    <div class="w-form-done">
-                        <div>Thank you! Your submission has been received!</div>
-                    </div>
-                    <div class="w-form-fail">
-                        <div>Oops! Something went wrong while submitting the form.</div>
-                    </div>
+            <img src="{{ asset('img/marca_gto.png') }}" height="100px" width="auto" class="my-4 my-md-0"
+                alt="">
+
+            <div class="ms-0 ms-md-5 mt-4 mt-md-0">
+                <div class="text-center text-md-start">
+                    <h6>Teléfono:</h6>
+                    <a href="" class="btn btn-link text-white">477 9801552</a>
+                </div>
+                <div class="text-center text-md-start">
+                    <h6>Correo:</h6>
+                    <a href="mailto:contacto@derch.com.mx" class="btn btn-link text-white">contacto@derch.com.mx</a>
                 </div>
             </div>
         </div>
     </div>
-    <div class="text-block">©Copyright <span id="year"></span> Todos los derechos reservados</div>
+    <div class="d-flex flex-md-row flex-column justify-content-between align-items-center">
+        <div class="text-block">©Copyright <span id="year"></span> Todos los derechos reservados</div>
+
+        <div class="d-flex align-items-center">
+            <a href="https://www.facebook.com/Reclutamiento.DERCH/" class="mx-3 text-white footer-links">
+                <ion-icon style="font-size: 30px" name="logo-facebook"></ion-icon>
+            </a>
+            <a href="https://instagram.com/derch_reclutamientoch?igshid=YmMyMTA2M2Y="
+                class="mx-3 text-white footer-links">
+                <ion-icon style="font-size: 30px" name="logo-instagram"></ion-icon>
+            </a>
+            <a href="https://www.linkedin.com/company/derch-reclutamiento-y-capital-humano/"
+                class="mx-3 text-white footer-links">
+                <ion-icon style="font-size: 30px" name="logo-linkedin"></ion-icon>
+            </a>
+        </div>
+    </div>
+
 </div>
 
 @push('scripts')

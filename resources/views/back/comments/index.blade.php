@@ -4,25 +4,28 @@
     <div class="title-content justify-content-between px-0" style="border-top: none">
         <div class="d-flex align-items-center">
             <div class="title-icon">
-                <i class="link-icon" data-feather="key"></i>
+                <i class="link-icon" data-feather="message-circle"></i>
             </div>
-            <h4>Campañas</h4>
+            <h4>Reseñas</h4>
+
+            <button type="button" class="btn btn-outline-dark ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Crear
+                nueva</button>
         </div>
     </div>
 @endsection
 
 
 @section('content')
-    @if ($campaings->count() == 0)
+    @if ($comments->count() == 0)
         <div class="card card-body text-center" style="padding:80px 0px 100px 0px;">
             <img src="{{ asset('assets/img/group_7.svg') }}" class="wd-20p ml-auto mr-auto mb-5">
-            <h4>¡No hay campañas guardadas en la base de datos!</h4>
-            <p class="mb-4">Empieza a cargar campañas en tu plataforma usando el botón inferior.</p>
+            <h4>¡No hay reseñas guardadas en la base de datos!</h4>
+            <p class="mb-4">Empieza a cargar reseñas en tu plataforma usando el botón inferior.</p>
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary btn-uppercase wd-200 ml-auto mr-auto" data-bs-toggle="modal"
                 data-bs-target="#exampleModal">
                 Crear nueva
-                campaña
+                reseña
             </button>
         </div>
     @else
@@ -33,67 +36,29 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Imagen</th>
-                                    <th>Nombre</th>
-                                    <th>Información</th>
-                                    <th>Link</th>
-                                    <th>Estatus</th>
+                                    <th>Nombre completo</th>
+                                    <th>Reseña</th>
+                                    <th>Empresa</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($campaings as $campaing)
+                                @foreach ($comments as $comment)
                                     <tr>
-                                        <td style="width: 150px;">
-                                            <img style="width: 100%; height:auto; border-radius:0;"
-                                                src="{{ asset('img/campaings/' . $campaing->image) }}"
-                                                alt="{{ $campaing->name }}">
-                                        </td>
-                                        <td>{{ $campaing->name }}</td>
-                                        <td>{{ $campaing->description }}</td>
-                                        <td>{{ $campaing->link }}</td>
-                                        <td>
-
-                                            @if ($campaing->status == true)
-                                                <div class="dropdown">
-                                                    <button class="btn btn-success " type="button"
-                                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                                        Publicado
-                                                        <ion-icon class="pb-2 ms-2" name="chevron-down-outline"></ion-icon>
-                                                    </button>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a class="dropdown-item"
-                                                                href="{{ route('campaing.status', $campaing->id) }}">Borrador</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            @else
-                                                <div class="dropdown">
-                                                    <button class="btn btn-danger " type="button" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                        Borrador
-                                                        <ion-icon class="pb-2 ms-2" name="chevron-down-outline"></ion-icon>
-                                                    </button>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a class="dropdown-item"
-                                                                href="{{ route('campaing.status', $campaing->id) }}">Publicar</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            @endif
-                                        </td>
+                                        <td>{{ $comment->name }}</td>
+                                        <td>{{ $comment->comment }}</td>
+                                        <td>{{ $comment->company }}</td>
                                         <td>
                                             <div class="btn-group" role="group" aria-label="Basic example">
                                                 <a href="javascript:void(0)" data-toggle="modal"
-                                                    data-target="#modalEdit{{ $campaing->id }}"
+                                                    data-target="#modalEdit{{ $comment->id }}"
                                                     class="btn btn-outline-primary btn-sm btn-icon ps-1"
                                                     data-toggle="tooltip" data-original-title="Editar">
                                                     <i data-feather="edit" class="icon-lg"></i>
                                                 </a>
 
 
-                                                <form method="post"
-                                                    action="{{ route('campaings.destroy', $campaing->id) }}"
+                                                <form method="post" action="{{ route('comments.destroy', $comment->id) }}"
                                                     style="display: inline-block;">
                                                     <button type="submit"
                                                         class="btn btn-outline-danger btn-sm btn-icon ps-1"
@@ -109,7 +74,7 @@
                                         </td>
                                     </tr>
 
-                                    <div id="modalEdit{{ $campaing->id }}" class="modal fade">
+                                    <div id="modalEdit{{ $comment->id }}" class="modal fade">
                                         <div class="modal-dialog modal-dialog-vertical-center" role="document">
                                             <div class="modal-content bd-0 tx-14">
                                                 <div class="modal-header">
@@ -121,8 +86,7 @@
                                                     </button>
                                                 </div>
 
-                                                <form method="POST"
-                                                    action="{{ route('campaings.update', $campaing->id) }}"
+                                                <form method="POST" action="{{ route('comments.update', $comment->id) }}"
                                                     enctype="multipart/form-data">
                                                     {{ csrf_field() }}
                                                     {{ method_field('PUT') }}
@@ -132,15 +96,23 @@
                                                                 <div class="form-group">
                                                                     <label for="email">Nombre:</label>
                                                                     <input type="text" class="form-control"
-                                                                        name="name" value="{{ $campaing->name }}">
+                                                                        name="name" value="{{ $comment->name }}"
+                                                                        required>
                                                                 </div>
                                                             </div>
 
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
-                                                                    <label for="email">Link </label>
-                                                                    <input type="text" value="{{ $campaing->link }}"
-                                                                        name="email" class="form-control" required="">
+                                                                    <label for="email">Compañía </label>
+                                                                    <input type="text" value="{{ $comment->company }}"
+                                                                        name="company" class="form-control">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-12">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Descripción</label>
+                                                                    <textarea class="form-control" name="comment" required rows="3">{{ $comment->comment }}</textarea>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -165,7 +137,7 @@
 
         <div class="row justify-items-center">
             <div class="col text-center">
-                {{ $campaings->links() }}
+                {{ $comments->links() }}
             </div>
         </div>
     @endif
@@ -177,10 +149,10 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Nueva Campaña</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Nueva Reseña</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="{{ route('campaings.store') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('comments.store') }}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="modal-body">
 
@@ -188,28 +160,21 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label class="form-label">Nombre de campaña <span style="color: red">*</span></label>
+                                    <label class="form-label">Nombre completo <span style="color: red">*</span></label>
                                     <input type="text" name="name" required class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label class="form-label">Link</label>
-                                    <input type="text" name="link" class="form-control">
+                                    <label class="form-label">Empresa</label>
+                                    <input type="text" name="company" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="mb-3">
-                                    <label class="form-label">Descripción</label>
-                                    <textarea class="form-control" name="description" rows="3"></textarea>
-                                </div>
-                            </div>
-
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <label class="form-label">Imagen</label>
-                                    <input type="file" class="form-control" name="image">
+                                    <label class="form-label">Descripción <span style="color: red">*</span></label>
+                                    <textarea class="form-control" name="comment" rows="3" required></textarea>
                                 </div>
                             </div>
                         </div>

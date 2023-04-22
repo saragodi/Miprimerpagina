@@ -40,6 +40,12 @@
                     <span class="link-title">Campañas</span>
                 </a>
             </li>
+            <li class="nav-item ">
+                <a href="{{ route('comments.index') }}" class="nav-link">
+                    <i class="link-icon" data-feather="message-circle"></i>
+                    <span class="link-title">Reseñas</span>
+                </a>
+            </li>
 
             <li class="nav-item nav-category"></li>
             <li class="nav-item ">

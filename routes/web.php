@@ -108,6 +108,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'can:admin_access']],
     //Públicaciones
     Route::resource('posts', PostController::class);
 
+
+    //Reseñas
+    Route::resource('comments', CommentController::class);
+
     // Get Functions
     Route::resource('categories', CategoryController::class); //
 

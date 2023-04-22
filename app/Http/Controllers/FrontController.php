@@ -12,6 +12,7 @@ use App\Models\Project;
 use App\Models\Category;
 use App\Models\Applicant;
 use App\Models\Campaing;
+use App\Models\Comment;
 use App\Models\LegalText;
 use Str;
 
@@ -34,9 +35,12 @@ class FrontController extends Controller
 
         $campaings = Campaing::where('status', true)->get()->take(6);
 
+        $comments = Comment::get()->take(4);
+
         return view('front.index')
             ->with('banner', $banner)
-            ->with('campaings', $campaings);
+            ->with('campaings', $campaings)
+            ->with('comments', $comments);
     }
 
     public function jobs()

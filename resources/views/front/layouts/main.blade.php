@@ -37,6 +37,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="{{ asset('owlcarousel/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('owlcarousel/owl.theme.default.min.css') }}">
+
     <link href="{{ asset('front/css/normalize.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('front/css/webflow.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('front/css/derch.css') }}" rel="stylesheet" type="text/css">
@@ -82,6 +85,21 @@
                 transform: translate3d(0, 15%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
                 opacity: 0;
             }
+        }
+    </style>
+
+    <style>
+        .owl-prev span {
+            font-size: 50px;
+        }
+
+        .owl-next span {
+            font-size: 50px;
+
+        }
+
+        .owl-nav {
+            margin-top: 4rem;
         }
     </style>
 
@@ -145,6 +163,8 @@
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
     </script>
 
+
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
@@ -155,6 +175,32 @@
     <script src="{{ asset('assets/plugins/feather-icons/feather.min.js') }}"></script>
     <script>
         feather.replace()
+    </script>
+
+    <!-- Swiper JS -->
+    <script src="{{ asset('owlcarousel/owl.carousel.min.js') }}"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        $(document).ready(function() {
+            $(".owl-carousel").owlCarousel({
+                margin: 10,
+                loop: true,
+                nav: true,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                    },
+                    600: {
+                        items: 1,
+                    },
+                    1000: {
+                        items: 1,
+                    }
+                }
+            });
+        });
     </script>
 
     @stack('scripts')

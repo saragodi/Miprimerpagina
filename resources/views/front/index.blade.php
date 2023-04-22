@@ -179,8 +179,8 @@
                                     Operaciones, Administración, Gestión Comercial y de RRHH.</h2>
                             </div>
                             <!--
-                                                                                                                                                                                                                                                                                                                                                <a href="#" class="button w-button">LEARN MORE</a>
-                                                                                                                                                                                                                                                                                                                                                -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <a href="#" class="button w-button">LEARN MORE</a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                -->
                         </div>
                     </div>
                 </div>
@@ -277,12 +277,8 @@
                             <a href="#" class="button w-button">conoce mas</a>
                         </div>
                     </div>
-                    <div class="sticky-item is--mirror">
-                        <div data-w-id="06419b1c-cb04-b3ab-9578-f2afe93532ce" class="graphic">
-                            <div class="g-row">
-                                <div class="g-shape is--filp"></div>
-                                <div class="g-shape"></div>
-                            </div>
+                    <div class="sticky-item">
+                        <div data-w-id="8972386a-1375-8b5d-a0d1-c7f74075a401" class="graphic">
                             <div class="g-row">
                                 <div class="g-shape"></div>
                                 <div class="g-shape is--filp"></div>
@@ -290,6 +286,10 @@
                             <div class="g-row">
                                 <div class="g-shape is--filp"></div>
                                 <div class="g-shape"></div>
+                            </div>
+                            <div class="g-row">
+                                <div class="g-shape"></div>
+                                <div class="g-shape is--filp"></div>
                             </div>
                         </div>
                         <div class="item-content">
@@ -307,69 +307,234 @@
                             <a href="#" class="button w-button">conoce mas</a>
                         </div>
                     </div>
+                    <div class="sticky-item">
+                        <div data-w-id="8972386a-1375-8b5d-a0d1-c7f74075a401" class="graphic">
+                            <div class="g-row">
+                                <div class="g-shape"></div>
+                                <div class="g-shape is--filp"></div>
+                            </div>
+                            <div class="g-row">
+                                <div class="g-shape is--filp"></div>
+                                <div class="g-shape"></div>
+                            </div>
+                            <div class="g-row">
+                                <div class="g-shape"></div>
+                                <div class="g-shape is--filp"></div>
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <div class="section-label_small">
+                                <div class="small-text">Administración de nómina</div>
+                            </div>
+                            <div class="item-title">
+                                <h3 class="heading">
+                                    Payroll <br>
+                                    Relaciones laborales <br>
+                                </h3>
+                            </div>
+                            <a href="#" class="button w-button">conoce mas</a>
+                        </div>
+                    </div>
+                    <div class="sticky-item">
+                        <div data-w-id="8972386a-1375-8b5d-a0d1-c7f74075a401" class="graphic">
+                            <div class="g-row">
+                                <div class="g-shape"></div>
+                                <div class="g-shape is--filp"></div>
+                            </div>
+                            <div class="g-row">
+                                <div class="g-shape is--filp"></div>
+                                <div class="g-shape"></div>
+                            </div>
+                            <div class="g-row">
+                                <div class="g-shape"></div>
+                                <div class="g-shape is--filp"></div>
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <div class="section-label_small">
+                                <div class="small-text">Externalización de Proceso de Negocios (BPO), Acompañamiento &
+                                    Coaching en Gestión de RRHH</div>
+                            </div>
+                            <div class="item-title">
+                                <h3 class="heading">Ambas soluciones son un SERVICIO ESPECIALIZADO nos transfieres las
+                                    actividades y responsabilidades de Recursos Humanos para administrar y gestionar el
+                                    proceso integral de RRHH y vida laboral de cada colaborador. Tambien Preparamos y
+                                    guiamos a tu equipo de RRHH para administrar, ejecutar, operar y lograr el plan de
+                                    Acción de RRHH en TU EMPRESA</h3>
+                            </div>
+                            <a href="#" class="button w-button">conoce mas</a>
+                        </div>
+                    </div>
+                    <div class="sticky-item is--mirror">
+                        <div data-w-id="06419b1c-cb04-b3ab-9578-f2afe93532ce" class="graphic">
+                            <div class="g-row">
+                                <div class="g-shape is--filp"></div>
+                                <div class="g-shape"></div>
+                            </div>
+                            <div class="g-row">
+                                <div class="g-shape"></div>
+                                <div class="g-shape is--filp"></div>
+                            </div>
+                            <div class="g-row">
+                                <div class="g-shape is--filp"></div>
+                                <div class="g-shape"></div>
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <div class="section-label_small">
+                                <div class="small-text">OUTPLACEMENT</div>
+                            </div>
+                            <div class="item-title">
+                                Brindamos calidez y calidad en este proceso en el que cuidamos la imagen y prestigio de la
+                                empresa. En el proceso, enfocamos nuestra atención y filosofía de Tu empresa en la
+                                importancia de separar a un colaborador cuidando cada detalle y preparándolo para su nueva
+                                realidad.
+                                Te acompañamos en Procesos de Eficiencia, Salida Voluntaria o Involuntaria y Separaciones de
+                                personal por Pensión o Jubilación
+                            </div>
+                            <a href="#" class="button w-button">conoce mas</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="section">
         <div class="container is--max_width">
+
             <div class="cta-wrapper">
-                <div class="cta-message">
+
+                <div class="cta-message flex-column flex-md-row">
                     <div class="hero-intro_wrapper">
                         <div class="section-label_small">
-                            <div class="small-text">Sección</div>
+                            <h2>Reseñas</h2>
                         </div>
-                        <div class="section-heading">
-                            <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </h1>
-                        </div>
-                        <div class="section_cta">
-                            <a href="#" class="button w-button">Conoce nuestro trabajo</a>
+                    </div>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="owl-carousel">
+                                    @foreach ($comments as $comment)
+                                        <div>
+                                            <h3>{{ $comment->name }}</h3>
+                                            <h5 class="my-3">
+                                                "{{ $comment->comment }}"
+                                            </h5>
+
+                                            @if ($comment->company != null)
+                                                <small class="text-uppercase">{{ $comment->company }}</small>
+                                            @endif
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="cta-gradient">
                     <div class="gradient-row is--max-width is--straight"></div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="section gradient-eight">
+    <div class="section gradient-eight py-5 px-4 px-md-0">
         <div class="container">
-            <div class="partners">
-                <div class="partner-logo"><img src="{{ asset('img/placeholder-logo-1.svg') }}" loading="lazy"
-                        alt="" class="logo-partner">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h2>
+                        Queremos hablar contigo!
+                    </h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti voluptate provident, consequuntur
+                        temporibus ipsam a beatae. Nam, minus recusandae! Quas, assumenda repellat necessitatibus debitis
+                        temporibus minima magnam esse reiciendis distinctio.</p>
                 </div>
-                <div data-w-id="e608750d-598b-667a-b04d-75bd5bd2c9b3" class="partner-logo"><img
-                        src="{{ asset('img/placeholder-logo-2.svg') }}" loading="lazy" alt=""
-                        class="logo-partner">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="card card-body text-dark">
+                        <small class="text-uppercase text-center text-muted">Empresas</small>
+
+                        <h2 class="text-center fw-bold mb-3">dato</h2>
+
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="button w-button text-dark mt-2" data-bs-toggle="modal"
+                            data-bs-target="#companyModal">
+                            Contáctanos
+                        </button>
+
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="companyModal" data-bs-backdrop="static" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        ...
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
                 </div>
-                <div data-w-id="6a7ee9c6-263c-e0ee-7f76-3ad383f01cc3" class="partner-logo"><img
-                        src="{{ asset('img/placeholder-logo-3.svg') }}" loading="lazy" alt=""
-                        class="logo-partner">
-                </div>
-                <div data-w-id="dd06ef3f-2df6-ce86-7741-c7a06e720358" class="partner-logo"><img
-                        src="{{ asset('img/placeholder-logo-4.svg') }}" loading="lazy" alt=""
-                        class="logo-partner">
-                </div>
-                <div data-w-id="77c9f99b-677b-e5b3-3683-d93c75ddf986" class="partner-logo"><img
-                        src="{{ asset('img/placeholder-logo-5.svg') }}" loading="lazy" alt=""
-                        class="logo-partner">
-                </div>
-                <div data-w-id="b752959a-aba9-7e87-2ca4-772388efbf11" class="partner-logo"><img
-                        src="{{ asset('img/placeholder-logo-1.svg') }}" loading="lazy" alt=""
-                        class="logo-partner">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="card card-body text-dark">
+                        <small class="text-uppercase text-center text-muted">Candidatos</small>
+
+                        <h2 class="text-center fw-bold mb-3">dato</h2>
+
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="button w-button text-dark mt-2" data-bs-toggle="modal"
+                            data-bs-target="#peopleModal">
+                            Contáctanos
+                        </button>
+
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="peopleModal" data-bs-backdrop="static" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        ...
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="section">
         <div class="container is--max_width top-gradient">
-            <div class="header-section">
-                <div class="section-title">
-                    <h1 class="teal">Te acompañamos en Procesos de Eficiencia, Salida Voluntaria o Involuntaria y
-                        Separaciones de personal por Pensión o Jubilación</h1>
-                </div>
-            </div>
             <div data-w-id="bc7de3ed-4cbb-8f02-07d2-77887cbca156" class="footer-nav">
                 <div class="footer-nav-items">
                     <a href="#" class="f-nav-item is--empty w-inline-block"></a>
