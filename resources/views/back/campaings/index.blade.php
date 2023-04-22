@@ -7,6 +7,8 @@
                 <i class="link-icon" data-feather="key"></i>
             </div>
             <h4>Campañas</h4>
+            <button type="button" class="btn btn-outline-dark ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Crear
+                nueva</button>
         </div>
     </div>
 @endsection

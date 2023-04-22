@@ -150,7 +150,7 @@
                                 <div class="stat-heading">Personas</div>
                             </div>
                         </div>
-                        <p class="paragraph-large">Mas de 400 personas capacitadas. Más de 500 personas colocadas en nuevos
+                        <p class="paragraph-large">Más de 400 personas capacitadas. Más de 500 personas colocadas en nuevos
                             empleos. Trascendemos como Socios Comerciales en la historia de éxito de las Empresas a través
                             del desarrollo del Talento de sus Colaboradores.</p>
                     </div>
@@ -179,8 +179,8 @@
                                     Operaciones, Administración, Gestión Comercial y de RRHH.</h2>
                             </div>
                             <!--
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <a href="#" class="button w-button">LEARN MORE</a>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <a href="#" class="button w-button">LEARN MORE</a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                -->
                         </div>
                     </div>
                 </div>
@@ -204,9 +204,9 @@
                             <div class="small-text">Nuestra Visión</div>
                         </div>
                         <div class="section-heading">
-                            <h2>Ser referente en Mexico y LATAM en soluciones de Recursos Humanos y Servicios Corporativos
+                            <h2>Ser referente en México y LATAM en soluciones de Recursos Humanos y Servicios Corporativos
                                 Epecializados para la empresas. Siendo identificados y por nuestro profesionalismo y
-                                calidez; nuestra metodologia de trabajo, actitud de servicio y sentido de urgencia.</h2>
+                                calidez; nuestra metodología de trabajo, actitud de servicio y sentido de urgencia.</h2>
                         </div>
                         <!--<a href="#" class="button w-button">LEARN MORE</a>-->
                     </div>
@@ -247,7 +247,7 @@
                                     Proyectos Especiales. <br>
                                 </h3>
                             </div>
-                            <a href="#" class="button w-button">Conoce mas</a>
+                            <a href="#" class="button w-button">Conoce más</a>
                         </div>
                     </div>
                     <div class="sticky-item">
@@ -274,7 +274,10 @@
                                     desempeño, buscar áreas problemáticas, identificar oportunidades y desarrollar un plan
                                     de acción para mejorar el desempeño y productividad.</h3>
                             </div>
-                            <a href="#" class="button w-button">conoce mas</a>
+                            <button type="button" class="button w-button " data-bs-toggle="modal"
+                                data-bs-target="#companyModal">
+                                conoce más
+                            </button>
                         </div>
                     </div>
                     <div class="sticky-item">
@@ -304,7 +307,10 @@
                                     NOM 035 <br>
                                 </h3>
                             </div>
-                            <a href="#" class="button w-button">conoce mas</a>
+                            <button type="button" class="button w-button " data-bs-toggle="modal"
+                                data-bs-target="#companyModal">
+                                conoce más
+                            </button>
                         </div>
                     </div>
                     <div class="sticky-item">
@@ -332,7 +338,10 @@
                                     Relaciones laborales <br>
                                 </h3>
                             </div>
-                            <a href="#" class="button w-button">conoce mas</a>
+                            <button type="button" class="button w-button " data-bs-toggle="modal"
+                                data-bs-target="#companyModal">
+                                conoce más
+                            </button>
                         </div>
                     </div>
                     <div class="sticky-item">
@@ -358,11 +367,14 @@
                             <div class="item-title">
                                 <h3 class="heading">Ambas soluciones son un SERVICIO ESPECIALIZADO nos transfieres las
                                     actividades y responsabilidades de Recursos Humanos para administrar y gestionar el
-                                    proceso integral de RRHH y vida laboral de cada colaborador. Tambien Preparamos y
+                                    proceso integral de RRHH y vida laboral de cada colaborador. También Preparamos y
                                     guiamos a tu equipo de RRHH para administrar, ejecutar, operar y lograr el plan de
                                     Acción de RRHH en TU EMPRESA</h3>
                             </div>
-                            <a href="#" class="button w-button">conoce mas</a>
+                            <button type="button" class="button w-button " data-bs-toggle="modal"
+                                data-bs-target="#companyModal">
+                                conoce más
+                            </button>
                         </div>
                     </div>
                     <div class="sticky-item is--mirror">
@@ -390,9 +402,9 @@
                                 importancia de separar a un colaborador cuidando cada detalle y preparándolo para su nueva
                                 realidad.
                                 Te acompañamos en Procesos de Eficiencia, Salida Voluntaria o Involuntaria y Separaciones de
-                                personal por Pensión o Jubilación
+                                personal por Pensión o Jubilación.
                             </div>
-                            <a href="#" class="button w-button">conoce mas</a>
+                            <a href="#" class="button w-button">conoce más</a>
                         </div>
                     </div>
                 </div>
