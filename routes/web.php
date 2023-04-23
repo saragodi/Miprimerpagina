@@ -155,5 +155,5 @@ Route::post('apply_job/{id}', [
 ]);
 
 
-Route::get('legales/{slug}', 'FrontController@legalText')->name('legal.text');
+Route::get('legal', 'FrontController@legalText')->name('legal.text');
 Route::get('preguntas_frecuentes', 'FrontController@faqs')->name('faqs.text');

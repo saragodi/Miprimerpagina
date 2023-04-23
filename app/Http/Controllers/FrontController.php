@@ -2,28 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
-use App\Models\Job;
-
-use App\Models\Post;
-use App\Models\Banner;
-use App\Models\Project;
-
-use App\Models\Category;
-use App\Models\Applicant;
-use App\Models\Campaing;
-use App\Models\Comment;
-use App\Models\LegalText;
 use Str;
-
 use Auth;
-use Session;
 
+use File;
+use Mail;
 use Image;
 
-use Mail;
-use File;
+use Session;
+use Carbon\Carbon;
+use App\Models\Job;
+use App\Models\Post;
+use App\Models\Banner;
+use App\Models\Comment;
+
+use App\Models\Project;
+use App\Models\Campaing;
+
+use App\Models\Category;
+
+use App\Models\Applicant;
+use App\Models\LegalText;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class FrontController extends Controller
 {
@@ -62,91 +63,108 @@ class FrontController extends Controller
     public function applyTo(Request $request, $id)
     {
 
-        $request->validate([
-            'file' => 'required|file|max:2000|mimes:pdf',
+        $banner = Banner::where('is_active', true)->orderBy('updated_at', 'asc')->get()->take(1);
+
+        $campaings = Campaing::where('status', true)->get()->take(6);
+
+        $comments = Comment::get()->take(4);
+
+        $validator = Validator::make(request()->all(), [
+            'g-recaptcha-response' => 'recaptcha',
         ]);
 
-        $applicant = new Applicant;
+        // Verificamos si hay algún error
+        if ($validator->fails()) {
 
-        $applicant->job_id = $id;
-
-        $applicant->names = $request->names;
-        $applicant->lastnames = $request->lastnames;
-        $applicant->phone = $request->phone;
-        $applicant->email = $request->email;
-
-        /* Crear Slug del Nombre */
-        $nameslug = Str::slug($request->names);
-
-
-        if ($request->hasFile('file')) {
-            $archivo = $request->file('file');
-            $filename = $nameslug . '-cv.'   . $archivo->getClientOriginalExtension();
-
-            $location = public_path('docs/applicants/');
-            $archivo->move($location, $filename);
-
-            $applicant->file = $filename;
-        }
-
-        $applicant->save();
-
-        $job = Job::find($id);
-
-        //Correo
-        $data = array(
-            'name' => $applicant->names,
-            'email' => $applicant->email,
-            'lastname' => $applicant->lastnames,
-            'phone' => $applicant->phone,
-            'job' => $job->name,
-        );
-
-        $email = $applicant->email;
-        $name = $applicant->name;
-
-        $files = [
-            public_path('docs/applicants/' . $applicant->file),
-        ];
-
-
-        try {
-            Mail::send('mail.apply', $data, function ($message) use ($data, $email, $name) {
-                $message->to($email, $name)->subject('Hey! Gracias por tu postulación.');
-
-                $message->from('postulaciones.derch@gmail.com', 'Derch');
-            });
-
-            Mail::send('mail.new_user', $data, function ($message) use ($files, $data) {
-                $message->to('miriam.derch@gmail.com', 'Derch')->subject('Hey! Se han postulado para una vacante');
-
-                $message->from('postulaciones.derch@gmail.com', 'Derch');
-
-                foreach ($files as $file) {
-                    $message->attach($file);
-                }
-            });
-
-
-            $banner = Banner::where('is_active', true)->orderBy('updated_at', 'asc')->get()->take(1);
-
-            $campaings = Campaing::where('status', true)->get()->take(6);
+            $errors = $validator->errors();
 
             return view('front.index')
                 ->with('banner', $banner)
-                ->with('campaings', $campaings);
-        } catch (Exception $e) {
+                ->with('campaings', $campaings)
+                ->with('errors', $errors)
+                ->with('comments', $comments);
+        } else {
 
-            Session::flash('error', 'No se ha identificado servidor SMTP en la plataforma. Configuralo correctamente para enviar correos desde tu sistema.');
-            return response()->json(['mensaje' => 'No se ha identificado servidor SMTP en la plataforma. Configuralo correctamente para enviar correos desde tu sistema.'], 200);
+            $request->validate([
+                'file' => 'required|file|max:2000|mimes:pdf',
+            ]);
 
-            $banner = Banner::where('is_active', true)->orderBy('updated_at', 'asc')->get()->take(1);
+            $applicant = new Applicant;
 
-            $campaings = Campaing::where('status', true)->get()->take(6);
+            $applicant->job_id = $id;
 
-            return view('front.index')
-                ->with('banner', $banner)
-                ->with('campaings', $campaings);
+            $applicant->names = $request->names;
+            $applicant->lastnames = $request->lastnames;
+            $applicant->phone = $request->phone;
+            $applicant->email = $request->email;
+
+            /* Crear Slug del Nombre */
+            $nameslug = Str::slug($request->names);
+
+
+            if ($request->hasFile('file')) {
+                $archivo = $request->file('file');
+                $filename = $nameslug . '-cv.'   . $archivo->getClientOriginalExtension();
+
+                $location = public_path('docs/applicants/');
+                $archivo->move($location, $filename);
+
+                $applicant->file = $filename;
+            }
+
+            $applicant->save();
+
+            $job = Job::find($id);
+
+            //Correo
+            $data = array(
+                'name' => $applicant->names,
+                'email' => $applicant->email,
+                'lastname' => $applicant->lastnames,
+                'phone' => $applicant->phone,
+                'job' => $job->name,
+            );
+
+            $email = $applicant->email;
+            $name = $applicant->name;
+
+            $files = [
+                public_path('docs/applicants/' . $applicant->file),
+            ];
+
+
+            try {
+                Mail::send('mail.apply', $data, function ($message) use ($data, $email, $name) {
+                    $message->to($email, $name)->subject('Hey! Gracias por tu postulación.');
+
+                    $message->from('postulaciones.derch@gmail.com', 'Derch');
+                });
+
+                Mail::send('mail.new_user', $data, function ($message) use ($files, $data) {
+                    $message->to('miriam.derch@gmail.com', 'Derch')->subject('Hey! Se han postulado para una vacante');
+
+                    $message->from('postulaciones.derch@gmail.com', 'Derch');
+
+                    foreach ($files as $file) {
+                        $message->attach($file);
+                    }
+                });
+
+                return view('front.index')
+                    ->with('banner', $banner)
+                    ->with('campaings', $campaings)
+                    ->with('comments', $comments);
+            } catch (Exception $e) {
+
+                Session::flash('error', 'No se ha identificado servidor SMTP en la plataforma. Configuralo correctamente para enviar correos desde tu sistema.');
+                return response()->json(['mensaje' => 'No se ha identificado servidor SMTP en la plataforma. Configuralo correctamente para enviar correos desde tu sistema.'], 200);
+
+
+                return view('front.index')
+                    ->with('banner', $banner)
+                    ->with('campaings', $campaings)
+                    ->with('comments', $comments);
+            }
         }
     }
 
@@ -158,18 +176,10 @@ class FrontController extends Controller
             ->with('projects', $projects);
     }
 
-    public function legalText($slug)
+    public function legalText()
     {
-        $text = LegalText::where('slug', $slug)->first();
 
-        $legales = LegalText::get();
-
-        $projects = Project::take(5)->orderBy('created_at', 'asc')->where('is_active', 1)->get();
-
-        return view('front.privacy')
-            ->with('text', $text)
-            ->with('projects', $projects)
-            ->with('legales', $legales);
+        return view('front.privacy');
     }
 
     public function posts()
@@ -225,5 +235,13 @@ class FrontController extends Controller
         return view('front.posts')
             ->with('category', $category)
             ->with('posts', $posts);
+    }
+
+    public function companyContact(Request $request)
+    {
+    }
+
+    public function personContact(Request $request)
+    {
     }
 }

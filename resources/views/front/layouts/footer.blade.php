@@ -6,6 +6,7 @@
             <div class="footer-links">
                 <a href="{{ route('index') }}" class="nav-link">Inicio</a>
                 <a href="{{ route('jobs.all') }}" class="nav-link">Vacantes</a>
+                <a href="{{ route('legal.text') }}" class="nav-link">Políticas de Privacidad</a>
             </div>
         </div>
         <div class="footer-row">
@@ -25,7 +26,7 @@
         </div>
     </div>
     <div class="d-flex flex-md-row flex-column justify-content-between align-items-center">
-        <div class="text-block">©Copyright <span id="year"></span> Todos los derechos reservados</div>
+        <div class="text-block">©Copyright <span id="year"></span> Todos los derechos reservados. </div>
 
         <div class="d-flex align-items-center">
             <a href="https://www.facebook.com/Reclutamiento.DERCH/" class="mx-3 text-white footer-links">

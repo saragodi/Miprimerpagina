@@ -4,6 +4,7 @@
 
 <head>
 
+    {!! htmlScriptTagJsApi(['lang' => 'es']) !!}
     @php
         $seo = App\Models\SEO::first();
     @endphp

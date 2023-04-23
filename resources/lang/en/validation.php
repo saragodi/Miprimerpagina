@@ -135,6 +135,9 @@ return [
         ],
     ],
 
+    'recaptcha' => 'Hey!!! :attribute is wrong!',
+
+
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Attributes

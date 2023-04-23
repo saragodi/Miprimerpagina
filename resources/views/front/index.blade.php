@@ -179,8 +179,8 @@
                                     Operaciones, Administración, Gestión Comercial y de RRHH.</h2>
                             </div>
                             <!--
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <a href="#" class="button w-button">LEARN MORE</a>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <a href="#" class="button w-button">LEARN MORE</a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            -->
                         </div>
                     </div>
                 </div>
@@ -463,7 +463,7 @@
                         temporibus minima magnam esse reiciendis distinctio.</p>
                 </div>
                 <div class="col-md-4 mb-4 mb-md-0">
-                    <div class="card card-body text-dark">
+                    <div class="card card-body text-dark p-4">
                         <small class="text-uppercase text-center text-muted">Empresas</small>
 
                         <h2 class="text-center fw-bold mb-3">dato</h2>
@@ -488,7 +488,10 @@
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        ...
+                                        <form action="">
+
+                                            {!! htmlFormSnippet() !!}
+                                        </form>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
@@ -503,7 +506,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 mb-4 mb-md-0">
-                    <div class="card card-body text-dark">
+                    <div class="card card-body text-dark p-4">
                         <small class="text-uppercase text-center text-muted">Candidatos</small>
 
                         <h2 class="text-center fw-bold mb-3">dato</h2>
@@ -528,7 +531,10 @@
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        ...
+                                        <form action="">
+
+                                            {!! htmlFormSnippet() !!}
+                                        </form>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"

@@ -58,7 +58,7 @@
             <div class="card card-body job-form pt-2">
                 <form action="{{ route('apply.to', $job->id) }}" method="post" enctype="multipart/form-data">
 
-                    {{ csrf_field() }}  
+                    {{ csrf_field() }}
 
                     <div class="d-flex justify-content-between align-items-center mb-1">
                         <h3 style="font-weight:600;">Tus datos</h3>
@@ -107,6 +107,9 @@
                                 <input type="file" name="file" required class="form-control">
                             </div>
                         </div>
+
+
+                        {!! htmlFormSnippet() !!}
 
                         <div class="col-md-12 mt-4 d-flex justify-content-end">
                             <button class="button w-button" type="submit">Subir</button>
