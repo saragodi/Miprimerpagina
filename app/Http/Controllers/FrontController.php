@@ -22,7 +22,9 @@ use App\Models\Campaing;
 use App\Models\Category;
 
 use App\Models\Applicant;
+use App\Models\Company;
 use App\Models\LegalText;
+use App\Models\Person;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -239,9 +241,155 @@ class FrontController extends Controller
 
     public function companyContact(Request $request)
     {
+
+        $banner = Banner::where('is_active', true)->orderBy('updated_at', 'asc')->get()->take(1);
+
+        $campaings = Campaing::where('status', true)->get()->take(6);
+
+        $comments = Comment::get()->take(4);
+
+        $validator = Validator::make(request()->all(), [
+            'g-recaptcha-response' => 'recaptcha',
+        ]);
+
+        if ($validator->fails()) {
+
+            $errors = $validator->errors();
+
+            return view('front.index')
+                ->with('banner', $banner)
+                ->with('campaings', $campaings)
+                ->with('errors', $errors)
+                ->with('comments', $comments);
+        } else {
+
+            $company = new Company;
+
+            $company->names = $request->names;
+            $company->phone = $request->phone;
+            $company->email = $request->email;
+            $company->message = $request->message;
+
+            $company->save();
+
+
+            //Correo
+            $data = array(
+                'company_id' => $company->id,
+            );
+
+
+            try {
+
+                Mail::send('mail.new_user', $data, function ($message) use ($data) {
+                    $message->to('miriam.derch@gmail.com', 'Derch')->subject('Hey! Te ha contactado una nueva empresa');
+
+                    $message->from('postulaciones.derch@gmail.com', 'Derch');
+                });
+
+                return view('front.index')
+                    ->with('banner', $banner)
+                    ->with('campaings', $campaings)
+                    ->with('comments', $comments);
+            } catch (Exception $e) {
+
+                Session::flash('error', 'No se ha identificado servidor SMTP en la plataforma. Configuralo correctamente para enviar correos desde tu sistema.');
+                return response()->json(['mensaje' => 'No se ha identificado servidor SMTP en la plataforma. Configuralo correctamente para enviar correos desde tu sistema.'], 200);
+
+
+                return view('front.index')
+                    ->with('banner', $banner)
+                    ->with('campaings', $campaings)
+                    ->with('comments', $comments);
+            }
+        }
     }
 
     public function personContact(Request $request)
     {
+
+        $banner = Banner::where('is_active', true)->orderBy('updated_at', 'asc')->get()->take(1);
+
+        $campaings = Campaing::where('status', true)->get()->take(6);
+
+        $comments = Comment::get()->take(4);
+
+
+
+        $validator = Validator::make(request()->all(), [
+            'g-recaptcha-response' => 'recaptcha',
+        ]);
+
+        if ($validator->fails()) {
+
+            $errors = $validator->errors();
+
+            return view('front.index')
+                ->with('banner', $banner)
+                ->with('campaings', $campaings)
+                ->with('errors', $errors)
+                ->with('comments', $comments);
+        } else {
+
+            $person = new Person;
+
+            $request->validate([
+                'file' => 'required|file|max:2000|mimes:pdf',
+            ]);
+
+            $person->names = $request->names;
+            $person->lastnames = $request->lastnames;
+            $person->phone = $request->phone;
+            $person->email = $request->email;
+
+            $person->message = $request->message;
+
+            /* Crear Slug del Nombre */
+            $nameslug = Str::slug($request->names);
+
+
+            if ($request->hasFile('file')) {
+                $archivo = $request->file('file');
+                $filename = $nameslug . '-cv.'   . $archivo->getClientOriginalExtension();
+
+                $location = public_path('docs/applicants/');
+                $archivo->move($location, $filename);
+
+                $person->file = $filename;
+            }
+
+            $person->save();
+
+
+            //Correo
+            $data = array(
+                'company_id' => $person->id,
+            );
+
+
+            try {
+
+                Mail::send('mail.new_user', $data, function ($message) use ($data) {
+                    $message->to('miriam.derch@gmail.com', 'Derch')->subject('Hey! Se han postulado para buscar una vacante');
+
+                    $message->from('postulaciones.derch@gmail.com', 'Derch');
+                });
+
+                return view('front.index')
+                    ->with('banner', $banner)
+                    ->with('campaings', $campaings)
+                    ->with('comments', $comments);
+            } catch (Exception $e) {
+
+                Session::flash('error', 'No se ha identificado servidor SMTP en la plataforma. Configuralo correctamente para enviar correos desde tu sistema.');
+                return response()->json(['mensaje' => 'No se ha identificado servidor SMTP en la plataforma. Configuralo correctamente para enviar correos desde tu sistema.'], 200);
+
+
+                return view('front.index')
+                    ->with('banner', $banner)
+                    ->with('campaings', $campaings)
+                    ->with('comments', $comments);
+            }
+        }
     }
 }

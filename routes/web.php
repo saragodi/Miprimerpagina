@@ -154,6 +154,16 @@ Route::post('apply_job/{id}', [
     'as' => 'apply.to',
 ]);
 
+Route::post('/empresas/contacto', [
+    'uses' => 'FrontController@companyContact',
+    'as' => 'company.contact'
+]);
+
+Route::post('/aplicantes/contacto', [
+    'uses' => 'FrontController@peopleContact',
+    'as' => 'people.contact'
+]);
+
 
 Route::get('legal', 'FrontController@legalText')->name('legal.text');
 Route::get('preguntas_frecuentes', 'FrontController@faqs')->name('faqs.text');

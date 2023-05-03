@@ -179,8 +179,8 @@
                                     Operaciones, Administración, Gestión Comercial y de RRHH.</h2>
                             </div>
                             <!--
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <a href="#" class="button w-button">LEARN MORE</a>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <a href="#" class="button w-button">LEARN MORE</a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    -->
                         </div>
                     </div>
                 </div>
@@ -483,21 +483,58 @@
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Contacto para empresas</h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
-                                    <div class="modal-body">
-                                        <form action="">
+                                    <form action="{{ route('company.contact') }}" method="POST">
 
-                                            {!! htmlFormSnippet() !!}
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
-                                    </div>
+                                        {{ csrf_field() }}
+
+                                        <div class="modal-body">
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Nombres*</label>
+                                                        <input type="text" required name="name"
+                                                            class="form-control text-dark">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Teléfono*</label>
+                                                        <input type="number" required name="phone"
+                                                            class="form-control text-dark">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Correo Electrónico*</label>
+                                                        <input type="email" required name="email"
+                                                            class="form-control text-dark">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Mensaje</label>
+                                                        <textarea name="message" class="form-control text-dark" cols="30" rows="10"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 d-flex justify-content-end">
+                                                    {!! htmlFormSnippet() !!}
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Enviar</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -526,21 +563,76 @@
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Contacto para candidatos</h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
-                                    <div class="modal-body">
-                                        <form action="">
+                                    <form action="{{ route('people.contact') }}" method="POST"
+                                        enctype="multipart/form-data">
 
-                                            {!! htmlFormSnippet() !!}
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
-                                    </div>
+                                        {{ csrf_field() }}
+
+                                        <div class="modal-body">
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Nombres*</label>
+                                                        <input type="text" required name="names"
+                                                            class="form-control text-dark">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Apellidos*</label>
+                                                        <input type="text" required name="lastnames"
+                                                            class="form-control text-dark">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Teléfono*</label>
+                                                        <input type="number" required name="phone"
+                                                            class="form-control text-dark">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Correo Electrónico*</label>
+                                                        <input type="email" required name="email"
+                                                            class="form-control text-dark">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="mb-3">
+                                                        <label for="exampleFormControlInput1"
+                                                            class="form-label">C.V*<small>(Formato PDF. máx
+                                                                2GB)</small></label>
+                                                        <input type="file" name="file" required
+                                                            class="form-control text-dark">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Mensaje</label>
+                                                        <textarea name="message" class="form-control text-dark" cols="30" rows="10"></textarea>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 d-flex justify-content-end">
+                                                    {!! htmlFormSnippet() !!}
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Enviar</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
