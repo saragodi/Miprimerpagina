@@ -32,7 +32,6 @@
                                 </div>
                                 <div class="section_cta">
                                     <a href="#" class="button w-button">Nuestro trabajo</a>
-                                    <a href="#" class="button is--ghost w-button">Conoce más</a>
                                 </div>
                             </div>
                         </div>
@@ -179,8 +178,8 @@
                                     Operaciones, Administración, Gestión Comercial y de RRHH.</h2>
                             </div>
                             <!--
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <a href="#" class="button w-button">LEARN MORE</a>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <a href="#" class="button w-button">LEARN MORE</a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                -->
                         </div>
                     </div>
                 </div>
@@ -411,7 +410,7 @@
             </div>
         </div>
     </div>
-    <div class="section">
+    <div class="section" style="overflow: hidden">
         <div class="container is--max_width">
 
             <div class="cta-wrapper">
