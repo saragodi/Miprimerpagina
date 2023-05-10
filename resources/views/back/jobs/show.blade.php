@@ -89,7 +89,7 @@
 
 
                                                             <p><a target="_blank"
-                                                                    href="{{ asset('img/clients/files/' . $applicant->file) }}">{{ $applicant->name }}</a>
+                                                                    href="{{ asset('docs/applicants/' . $applicant->file) }}">{{ $applicant->name }}</a>
                                                             </p>
                                                             <hr>
                                                             <small class="upload-time">Subido:

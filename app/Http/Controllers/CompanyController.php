@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Comment;
 use App\Models\Company;
 use Illuminate\Http\Request;
 
@@ -11,7 +10,7 @@ class CompanyController extends Controller
 
     public function index()
     {
-        $companies = Comment::paginate(20);
+        $companies = Company::paginate(20);
 
         return view('back.companies.index')
             ->with('companies', $companies);

@@ -37,26 +37,9 @@
                                 @foreach ($companies as $company)
                                     <tr>
                                         <td>{{ $company->name }}</td>
-                                        <td> {{ $banner->email }}</td>
-                                        <td>{{ $banner->phone }}</td>
-
-                                        <td class="d-flex align-items-center">
-                                            <a href="{{ route('banners.show', $banner->id) }}"
-                                                class="btn btn-link text-dark px-1 py-0" data-toggle="tooltip"
-                                                data-original-title="Ver Detalle">
-                                                <i class="link-icon" data-feather="eye"></i>
-                                            </a>
-
-                                            <form method="POST" action="{{ route('banners.destroy', $banner->id) }}">
-                                                {{ csrf_field() }}
-                                                {{ method_field('DELETE') }}
-
-                                                <button type="submit" class="btn btn-link text-danger px-1 py-0"
-                                                    data-toggle="tooltip" data-original-title="Eliminar Banner">
-                                                    <i class="link-icon" data-feather="trash"></i>
-                                                </button>
-                                            </form>
-                                        </td>
+                                        <td> {{ $company->email }}</td>
+                                        <td>{{ $company->phone }}</td>
+                                        <td>{{ $company->message }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

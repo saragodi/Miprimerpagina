@@ -68,7 +68,7 @@
             <h4>¡No hay vacantas guardadas en la base de datos!</h4>
             <p class="mb-4">Empieza a cargar banners en tu plataforma usando el botón superior.</p>
             <a href="{{ route('banners.create') }}"
-                class="btn btn-sm btn-primary btn-uppercase wd-200 ml-auto mr-auto">Crear nuevo banner</a>
+                class="btn btn-sm btn-primary btn-uppercase wd-200 ml-auto mr-auto">Crear nueva vacante</a>
         </div>
     @else
         <div class="row">

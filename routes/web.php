@@ -122,6 +122,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'can:admin_access']],
         'as' => 'user-rules.status',
     ]);
 
+    //Contactos
+    Route::resource('companies', CompanyController::class);
+    Route::resource('people', PersonController::class);
+
     //Administration
     Route::resource('seo', SEOController::class); //
     Route::resource('legals', LegalTextController::class);

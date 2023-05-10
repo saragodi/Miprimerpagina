@@ -32,65 +32,47 @@
                                     <th>Teléfono</th>
                                     <th>CV</th>
                                     <th>Mensaje</th>
-                                    <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($banners as $banner)
+                                @foreach ($people as $person)
                                     <tr>
-                                        <td style="width: 150px;">
-                                            <img style="width: 100%; height:auto; border-radius:0;"
-                                                src="{{ asset('img/banners/' . $banner->image_desktop) }}"
-                                                alt="{{ $banner->title }}">
-
-                                        </td>
-                                        <td style="width: 250px;">
-                                            <strong>{{ $banner->title }}</strong><br>
-                                            <p>{{ $banner->subtitle }}</p>
-                                        </td>
-                                        <td> {{ $banner->priority }}</td>
-                                        <td>{{ $banner->text_button }}</td>
-                                        <td>{{ $banner->link }}</td>
-
+                                        <td>{{ $person->name }} {{ $person->lastnames }}</td>
+                                        <td> {{ $person->email }}</td>
+                                        <td>{{ $person->phone }}</td>
                                         <td>
-                                            @if ($banner->is_active == true)
-                                                <span class="badge badge-success">Activado</span><br>
-                                            @else
-                                                <span class="badge badge-danger">Desactivado</span><br>
-                                            @endif
+                                            <div class="item">
+                                                <div class="card file-card">
+
+
+                                                    <div class="card-body">
+                                                        <div class="d-flex justify-content-between align-items-center">
+                                                            <div class="pdf-color">
+                                                                <div class="file-icon">
+                                                                    <i class="link-icon" data-feather="file-text"></i>
+                                                                    <span class="filename">{{ $person->file }}
+                                                                    </span>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-options dropdown">
+                                                                <a href="{{ asset('docs/applicants/' . $person->file) }}"
+                                                                    target="_blank" class="icon" aria-expanded="false"><i
+                                                                        class="link-icon" data-feather="download"></i></a>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <p><a target="_blank"
+                                                                href="{{ asset('docs/applicants/' . $person->file) }}">{{ $person->name }}</a>
+                                                        </p>
+                                                        <hr>
+                                                        <small class="upload-time">Subido:
+                                                            {{ $person->updated_at }}</small>
+                                                    </div>
+                                                </div>
                                         </td>
-
-                                        <td class="d-flex align-items-center">
-                                            <a href="{{ route('banners.show', $banner->id) }}"
-                                                class="btn btn-link text-dark px-1 py-0" data-toggle="tooltip"
-                                                data-original-title="Ver Detalle">
-                                                <i class="link-icon" data-feather="eye"></i>
-                                            </a>
-
-                                            <a href="{{ route('banners.edit', $banner->id) }}"
-                                                class="btn btn-link text-dark px-1 py-0" data-toggle="tooltip"
-                                                data-original-title="Editar">
-                                                <i class="link-icon" data-feather="edit"></i>
-                                            </a>
-
-
-                                            <a href="{{ route('banner.status', $banner->id) }}" type="submit"
-                                                class="btn btn-link text-dark px-1 py-0" data-toggle="tooltip"
-                                                data-original-title="Cambiar estado">
-                                                <i class="link-icon" data-feather="loader"></i>
-                                            </a>
-
-
-                                            <form method="POST" action="{{ route('banners.destroy', $banner->id) }}">
-                                                {{ csrf_field() }}
-                                                {{ method_field('DELETE') }}
-
-                                                <button type="submit" class="btn btn-link text-danger px-1 py-0"
-                                                    data-toggle="tooltip" data-original-title="Eliminar Banner">
-                                                    <i class="link-icon" data-feather="trash"></i>
-                                                </button>
-                                            </form>
-                                        </td>
+                                        <td>{{ $person->message }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

@@ -49,13 +49,13 @@
 
             <li class="nav-item nav-category">Contactos</li>
             <li class="nav-item ">
-                <a href="" class="nav-link">
+                <a href="{{ route('companies.index') }}" class="nav-link">
                     <i class="link-icon" data-feather="briefcase"></i>
                     <span class="link-title">Empresas</span>
                 </a>
             </li>
             <li class="nav-item ">
-                <a href="" class="nav-link">
+                <a href="{{ route('people.index') }}" class="nav-link">
                     <i class="link-icon" data-feather="coffee"></i>
                     <span class="link-title">Postulados</span>
                 </a>
@@ -66,6 +66,12 @@
                 <a href="{{ route('admin.system') }}" class="nav-link">
                     <i class="link-icon" data-feather="settings"></i>
                     <span class="link-title">Configuración</span>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a href="https://derch.gitbook.io/derch-web/" class="nav-link">
+                    <i class="link-icon" data-feather="settings"></i>
+                    <span class="link-title">Documentación</span>
                 </a>
             </li>
             <li class="nav-item ">
