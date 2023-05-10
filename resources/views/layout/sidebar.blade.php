@@ -69,7 +69,7 @@
                 </a>
             </li>
             <li class="nav-item ">
-                <a href="https://derch.gitbook.io/derch-web/" class="nav-link">
+                <a href="https://derch.gitbook.io/derch-web/" target="_blank" class="nav-link">
                     <i class="link-icon" data-feather="settings"></i>
                     <span class="link-title">Documentación</span>
                 </a>
