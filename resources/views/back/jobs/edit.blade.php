@@ -136,7 +136,9 @@
                             <div class="col-md-12 mt-3">
                                 <h3>Descripción <span style="color: red">*</span></h3>
                                 <div class="my-3">
-                                    <textarea name="about" class="form-control" id="project-body"></textarea>
+                                    <textarea name="about" class="form-control" id="project-body">
+                                        {{ $job->about }}
+                                    </textarea>
                                 </div>
                             </div>
                         </div>
