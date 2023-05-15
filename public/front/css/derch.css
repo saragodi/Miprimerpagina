@@ -834,6 +834,7 @@ p {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+  top: 60px;
 }
 
 .sticky-wrapper {

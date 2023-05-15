@@ -149,9 +149,14 @@
                                 <div class="stat-heading">Personas</div>
                             </div>
                         </div>
-                        <p class="paragraph-large">Más de 400 personas capacitadas. Más de 500 personas colocadas en nuevos
-                            empleos. Trascendemos como Socios Comerciales en la historia de éxito de las Empresas a través
-                            del desarrollo del Talento de sus Colaboradores.</p>
+                        <ul style="list-style: none;">
+                            <li>
+                                <p class="paragraph-large">+ 400 personas capacitadas.</p>
+                            </li>
+                            <li>
+                                <p class="paragraph-large">+ 500 personas colocadas en nuevos empleos.</p>
+                            </li>
+                        </ul>
                     </div>
                     <div class="progress-line"></div>
                 </div>
@@ -178,8 +183,8 @@
                                     Operaciones, Administración, Gestión Comercial y de RRHH.</h2>
                             </div>
                             <!--
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <a href="#" class="button w-button">LEARN MORE</a>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <a href="#" class="button w-button">LEARN MORE</a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                -->
                         </div>
                     </div>
                 </div>
@@ -189,6 +194,18 @@
             </div>
         </div>
     </div>
+
+    <!--{{-- 
+    <div class="section bg-light text-dark">
+        <div class="container">
+            <div class="row">
+                <h3>Nuestra propuesta de valor</h3>
+                <img src="{{ asset('front/images/derchm.png') }}" alt="">
+            </div>
+        </div>
+    </div>
+ --}}-->
+
     @if ($campaings->count() != 0)
         @include('front.layouts.partials._promo_banner')
     @else
@@ -216,6 +233,7 @@
             </div>
         </div>
     </div>
+
     <div data-w-id="7d3dded1-e6be-537b-4cdf-9d6ba6f9acff" class="section-sticky" id="areas">
         <div class="wrapper-tech">
             <div class="container-sticky">

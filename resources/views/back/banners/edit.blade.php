@@ -27,30 +27,13 @@
                         <input type="hidden" name="is_promotional" value="0">
 
                         <div class="row">
-                            <div class="form-group col-md-8">
+                            <div class="form-group col-md-6">
                                 <label for="title">Título <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="title" name="title"
                                     value="{{ $banner->title }}" required="" />
                             </div>
 
-                            <div class="form-group col-md-4">
-                                <label for="link">Prioridad
-                                    <span data-toggle="tooltip" data-placement="top"
-                                        title="Se refiere al posicionamiento que tendrá este elemento en la página web. Prioridad 1 se muestra siempre primero y prioridad 7 siempre al último. Si existen dos elementos con prioridades iguales tomará prevalencia el elemento creado más recientemente."><i
-                                            class="fas fa-info-circle"></i></span>
-                                </label>
-                                <select class="form-control" name="priority" required>
-                                    <option value="1" {{ $banner->priority == '1' ? 'selected' : '' }}>1</option>
-                                    <option value="2" {{ $banner->priority == '2' ? 'selected' : '' }}>2</option>
-                                    <option value="3" {{ $banner->priority == '3' ? 'selected' : '' }}>3</option>
-                                    <option value="4" {{ $banner->priority == '4' ? 'selected' : '' }}>4</option>
-                                    <option value="5" {{ $banner->priority == '5' ? 'selected' : '' }}>5</option>
-                                    <option value="6" {{ $banner->priority == '6' ? 'selected' : '' }}>6</option>
-                                    <option value="7" {{ $banner->priority == '7' ? 'selected' : '' }}>7</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group col-md-8">
+                            <div class="form-group col-md-6">
                                 <label for="subtitle">Subtítulo <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="subtitle" name="subtitle"
                                     value="{{ $banner->subtitle }}" required="" />
