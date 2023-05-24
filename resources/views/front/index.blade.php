@@ -58,6 +58,7 @@
                                     style="-webkit-transform:translate3d(-200%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-200%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-200%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-200%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
                                     class="hero-intro_wrapper">
                                     <div class="section-label_small">
+                                        <h3 style="font-weight: bold">Servicios Especializados - REPSE</h3>
                                         <div class="small-text">{{ $ban->title }}</div>
                                     </div>
                                     <div class="section-heading">
@@ -94,23 +95,23 @@
     <div class="section" id="us">
         <div class="container is--max_width">
             <div class="img-section">
-                <div class="img-gradient is--divider"></div><img src="{{ asset('img/ex.jpg') }}" loading="lazy"
+                <div class="img-gradient is--divider"></div><img src="{{ asset('img/5.png') }}" loading="lazy"
                     sizes="100vw" alt="" class="img-shape">
             </div>
             <div data-w-id="1a39f188-d98c-b925-f367-7c21c6d3db2b" style="opacity:0" class="statistics-hover-tabs">
                 <div class="tabs-images-slider">
-                    <div class="tab-img"><img src="{{ asset('img/ex.jpg') }}" loading="lazy" sizes="100vw" alt=""
+                    <div class="tab-img"><img src="{{ asset('img/5.png') }}" loading="lazy" sizes="100vw" alt=""
                             class="img-stat-scroll"></div>
-                    <div class="tab-img"><img src="{{ asset('img/colab.jpg') }}" loading="lazy" sizes="100vw"
-                            alt="" class="img-stat-scroll"></div>
-                    <div class="tab-img"><img src="{{ asset('img/people.jpg') }}" loading="lazy" sizes="100vw"
-                            alt="" class="img-stat-scroll"></div>
+                    <div class="tab-img"><img src="{{ asset('img/8.png') }}" loading="lazy" sizes="100vw" alt=""
+                            class="img-stat-scroll"></div>
+                    <div class="tab-img"><img src="{{ asset('img/5.png') }}" loading="lazy" sizes="100vw" alt=""
+                            class="img-stat-scroll"></div>
                 </div>
             </div>
             <div class="statistics">
                 <div data-w-id="2d08cc89-1e03-c998-08b5-559d964993e6" style="opacity:0" class="statistics-wrapper">
                     <div class="tab-img-mobile">
-                        <div class="tab-img"><img src="{{ asset('img/ex.jpg') }}" loading="lazy" sizes="100vw"
+                        <div class="tab-img"><img src="{{ asset('img/5.png') }}" loading="lazy" sizes="100vw"
                                 alt="" class="img-stat-scroll"></div>
                     </div>
                     <div data-w-id="547b9507-f1f1-fb04-4b21-32d67c1fcdaa" class="stat-item">
@@ -125,7 +126,7 @@
                             objetivos.</p>
                     </div>
                     <div class="tab-img-mobile">
-                        <div class="tab-img"><img src="{{ asset('img/colab.jpg') }}" loading="lazy" sizes="100vw"
+                        <div class="tab-img"><img src="{{ asset('img/8.png') }}" loading="lazy" sizes="100vw"
                                 alt="" class="img-stat-scroll"></div>
                     </div>
                     <div data-w-id="df42ad93-1aad-c4d8-af92-a6255636dcf8" class="stat-item is--filp">
@@ -139,7 +140,7 @@
                             éxito en gestión Comercial y de RH.</p>
                     </div>
                     <div class="tab-img-mobile">
-                        <div class="tab-img"><img src="{{ asset('img/people.jpg') }}" loading="lazy" sizes="100vw"
+                        <div class="tab-img"><img src="{{ asset('img/5.png') }}" loading="lazy" sizes="100vw"
                                 alt="" class="img-stat-scroll"></div>
                     </div>
                     <div data-w-id="bc4f1606-5e48-6a63-d2d3-ebf20b530e66" class="stat-item">
@@ -179,12 +180,11 @@
                             <div class="section-heading">
                                 <h2>Ser una firma que consolide el éxito de las empresas a través de desarrollo del Talento
                                     de sus colaboradores, sus Competencias y sus Habilidades, creando herramientas precisas
-                                    y de vanguardia para incrementar su productividad y cimentar bases de éxito en sus
-                                    Operaciones, Administración, Gestión Comercial y de RRHH.</h2>
+                                    y de vanguardia para incrementar su PRODUCTIVIDAD.</h2>
                             </div>
                             <!--
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <a href="#" class="button w-button">LEARN MORE</a>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <a href="#" class="button w-button">LEARN MORE</a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        -->
                         </div>
                     </div>
                 </div>
@@ -220,9 +220,9 @@
                             <div class="small-text">Nuestra Visión</div>
                         </div>
                         <div class="section-heading">
-                            <h2>Ser referente en México y LATAM en soluciones de Recursos Humanos y Servicios Corporativos
-                                Epecializados para la empresas. Siendo identificados y por nuestro profesionalismo y
-                                calidez; nuestra metodología de trabajo, actitud de servicio y sentido de urgencia.</h2>
+                            <h2>Ser referente en Mexico y LATAM en soluciones de Recursos Humanos y Servicios Corporativos
+                                Especializados para Empresas siendo identificados por: Nuestro Profesionalismo y Calidez;
+                                Nuestra Metodologia de Trabajo, Actitud de Servicio y Sentido de Urgencia.</h2>
                         </div>
                         <!--<a href="#" class="button w-button">LEARN MORE</a>-->
                     </div>
@@ -382,11 +382,10 @@
                                     Coaching en Gestión de RRHH</div>
                             </div>
                             <div class="item-title">
-                                <h3 class="heading">Ambas soluciones son un SERVICIO ESPECIALIZADO nos transfieres las
-                                    actividades y responsabilidades de Recursos Humanos para administrar y gestionar el
-                                    proceso integral de RRHH y vida laboral de cada colaborador. También Preparamos y
-                                    guiamos a tu equipo de RRHH para administrar, ejecutar, operar y lograr el plan de
-                                    Acción de RRHH en TU EMPRESA</h3>
+                                <h3 class="heading">Ambas soluciones son un SERVICIO ESPECIALIZADO. Administramos y
+                                    gestionamos el proceso integral de RRHH y vida laboral de cada colaborador. También
+                                    preparamos y guiamos a tu equipo de RRHH para administrar, ejecutar, operar y lograr el
+                                    plan de Acción de RRHH en TU EMPRESA</h3>
                             </div>
                             <button type="button" class="button w-button " data-bs-toggle="modal"
                                 data-bs-target="#companyModal">
@@ -473,19 +472,14 @@
             <div class="row">
                 <div class="col-md-4 mb-4 mb-md-0">
                     <h2>
-                        Queremos hablar contigo!
+                        QUEREMOS CONOCERTE!
                     </h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti voluptate provident, consequuntur
-                        temporibus ipsam a beatae. Nam, minus recusandae! Quas, assumenda repellat necessitatibus debitis
-                        temporibus minima magnam esse reiciendis distinctio.</p>
                 </div>
                 <div class="col-md-4 mb-4 mb-md-0">
                     <div class="card card-body text-dark p-4">
                         <small class="text-uppercase text-center text-muted">Empresas</small>
 
-                        <h2 class="text-center fw-bold mb-3">dato</h2>
-
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                        <h4 class="text-center fw-bold mb-3">Conoce nuestros Productos, Servicios y Oferta de Valor. </h4>
 
                         <!-- Button trigger modal -->
                         <button type="button" class="button w-button text-dark mt-2" data-bs-toggle="modal"
@@ -563,9 +557,8 @@
                     <div class="card card-body text-dark p-4">
                         <small class="text-uppercase text-center text-muted">Candidatos</small>
 
-                        <h2 class="text-center fw-bold mb-3">dato</h2>
-
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                        <h4 class="text-center fw-bold mb-3">Conoce nuestras vacantes y sube tu CV! Te compartiremos
+                            herramientas para seguir desarrollándotel </h4>
 
                         <!-- Button trigger modal -->
                         <button type="button" class="button w-button text-dark mt-2" data-bs-toggle="modal"
