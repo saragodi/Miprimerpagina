@@ -48,6 +48,16 @@ class FAQController extends Controller
         // Enviar a vista
         return redirect()->back();
     }
+public function examen ()
+{
+    return view ('examen');
+}
+
+
+
+
+
+
 
     public function show($id)
     {
